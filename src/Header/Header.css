@@ -1,6 +1,5 @@
-/*
 .header {
-  background-color: lightseagreen;
+  /*background-color: lightseagreen;*/
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,4 +20,3 @@
   gap: 20px;
   align-items: center;
 }
-*/
