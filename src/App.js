@@ -1,13 +1,14 @@
 import logo from "./logo.svg";
 import Header from "./Header/Header";
+import WeatherCard from "./WeatherCard/WeatherCard";
 import "./App.css";
 
 function App() {
   return (
     <div>
       <Header />
-      <main>
-        <section id="weather">weather</section>
+      <main className="main">
+        <WeatherCard day={false} type="moon" />
         <section id="card-section">card Section</section>
       </main>
     </div>
