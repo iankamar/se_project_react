@@ -1,8 +1,20 @@
 const weatherOptions = [
-  { url: "/images/day/sunny.svg", day: true, type: "sunny" },
-  { url: "/images/day/cloudy.svg", day: true, type: "cloudy" },
-  { url: "/images/night/cloudy.svg", day: false, type: "cloudy" },
-  { url: "/images/night/moon.svg", day: false, type: "moon" },
+  { url: require("../images/day/sunny.svg").default, day: true, type: "sunny" },
+  {
+    url: require("../images/day/cloudy.svg").default,
+    day: true,
+    type: "cloudy",
+  },
+  {
+    url: require("../images/night/rain.svg").default,
+    day: true,
+    type: "rain",
+  },
+  {
+    url: require("../images/night/moon.svg").default,
+    day: false,
+    type: "moon",
+  },
 ];
 
 const WeatherCard = ({ day, type }) => {
