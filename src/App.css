@@ -17,3 +17,25 @@
 .main {
   padding: 0 20px;
 }
+
+.card_section {
+  margin-top: 20px;
+}
+
+.card_name {
+  text-align: center;
+}
+
+.card_image {
+  width: 325px;
+  height: 328px;
+  border-radius: 10px;
+}
+
+.card_items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
