@@ -9,36 +9,42 @@ import "./App.css";
 
 function App() {
   const weatherTemp = "75°F";
+  const [activeModal, setActiveModal] = useState("");
+  const handleCreateModal = () => {
+    setActiveModal("create");
+  };
   return (
     <div>
-      <Header />
+      <Header onCreateModal={handleCreateModal} />
       <Main weatherTemp={weatherTemp} />
       <Footer />
-      <ModalWithForm title="New Garment">
-        <label>
-          Name
-          <input type="text" name="name" minLength="1" maxLength="30" />
-        </label>
-        <label>
-          Image
-          <input type="url" name="link" minLength="1" maxLength="30" />
-        </label>
-        <p> Select the weather type:</p>
-        <div>
+      {activeModal === "create" && (
+        <ModalWithForm title="New Garment">
+          <label>
+            Name
+            <input type="text" name="name" minLength="1" maxLength="30" />
+          </label>
+          <label>
+            Image
+            <input type="url" name="link" minLength="1" maxLength="30" />
+          </label>
+          <p> Select the weather type:</p>
           <div>
-            <input type="radio" id="hot" value="hot" />
-            <lable>Hot</lable>
+            <div>
+              <input type="radio" id="hot" value="hot" />
+              <lable>Hot</lable>
+            </div>
+            <div>
+              <input type="radio" id="warm" value="warm" />
+              <lable>Warm</lable>
+            </div>
+            <div>
+              <input type="radio" id="cold" value="cold" />
+              <lable>Cold</lable>
+            </div>
           </div>
-          <div>
-            <input type="radio" id="warm" value="warm" />
-            <lable>Warm</lable>
-          </div>
-          <div>
-            <input type="radio" id="cold" value="cold" />
-            <lable>Cold</lable>
-          </div>
-        </div>
-      </ModalWithForm>
+        </ModalWithForm>
+      )}
     </div>
   );
 }
