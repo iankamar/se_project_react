@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const weatherTemp = "75°F";
+  const weatherTemp = 65;
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const handleCreateModal = () => {
