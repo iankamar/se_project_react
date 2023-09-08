@@ -5,7 +5,7 @@ import ItemCard from "./ItemCard/ItemCard";
 import Main from "./Main/Main";
 import Footer from "./footer/Footer";
 import ModalWithForm from "./ModalWithForm/ModalWithForm";
-import InterModal from "./Main/ItemModal/ItemModal";
+import ItemModal from "./Main/ItemModal/ItemModal";
 import { useState } from "react";
 import "./App.css";
 
@@ -27,7 +27,7 @@ function App() {
   return (
     <div>
       <Header onCreateModal={handleCreateModal} />
-      <Main weatherTemp={weatherTemp} onSelectedCard={handleSelectedCard} />
+      <Main weatherTemp={weatherTemp} onSelectCard={handleSelectedCard} />
       <Footer />
       {activeModal === "create" && (
         <ModalWithForm title="New Garment" onClose={handleCloseModal}>
@@ -43,24 +43,22 @@ function App() {
           <div>
             <div>
               <input type="radio" id="hot" value="hot" />
-              <lable>Hot</lable>
+              <label>Hot</label>
             </div>
             <div>
               <input type="radio" id="warm" value="warm" />
-              <lable>Warm</lable>
+              <label>Warm</label>
             </div>
             <div>
               <input type="radio" id="cold" value="cold" />
-              <lable>Cold</lable>
+              <label>Cold</label>
             </div>
           </div>
         </ModalWithForm>
       )}
-      {activeModal === "preview" &&
-        (<ItemModal
-          selectedCard={selectedCard}
-          onClose={handleCloseModal}
-        />)()}
+      {activeModal === "preview" && (
+        <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
+      )}
     </div>
   );
 }

@@ -1,5 +1,5 @@
-const InterModal = ({ selectedCard, onClose }) => {
-  console.log("inter modal");
+const ItemModal = ({ selectedCard, onClose }) => {
+  console.log("item modal");
 
   return (
     <div className={`modal`}>
@@ -7,7 +7,7 @@ const InterModal = ({ selectedCard, onClose }) => {
         <button type="button" onClick={onClose}>
           Close
         </button>
-        <img src={selectCard.link} />
+        <img src={selectedCard.link} />
         <div> {selectedCard.name}</div>
         <div>Weather type: {selectedCard.weather}</div>
       </div>
@@ -15,4 +15,4 @@ const InterModal = ({ selectedCard, onClose }) => {
   );
 };
 
-export default InterModal;
+export default ItemModal;
