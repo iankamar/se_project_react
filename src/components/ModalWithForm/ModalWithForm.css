@@ -104,6 +104,7 @@
 
 input[type="radio"]:checked {
   background-color: #000;
+  content: url("../../images/radioButton.svg");
 }
 
 input[type="radio"] + label {
@@ -112,6 +113,7 @@ input[type="radio"] + label {
 
 input[type="radio"]:checked + label {
   color: #000;
+  content: url("../../images/radioButton.svg") no-repeat;
 }
 
 .modal__close {
