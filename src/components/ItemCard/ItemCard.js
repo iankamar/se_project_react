@@ -1,3 +1,4 @@
+import React from "react";
 import "./ItemCard.css";
 
 const ItemCard = ({ item, onSelectCard }) => {
@@ -6,11 +7,12 @@ const ItemCard = ({ item, onSelectCard }) => {
       <div>
         <img
           src={item.link}
+          alt="ImageOfCards"
           className="card__image"
           onClick={() => onSelectCard(item)}
         />
       </div>
-      <div className="card_name"> {item.name} </div>
+      <h3 className="card_name"> {item.name} </h3>
     </div>
   );
 };

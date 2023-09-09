@@ -17,11 +17,13 @@ const ModalWithForm = ({
           <h3 className="modal__title">{title}</h3>
         </div>
         <div className="modal__fieldset">
-          <form className="modal__form">{children}</form>
+          <form className="modal__form">
+            {children}
+            <button type="submit" className="modal__save">
+              {buttonText}
+            </button>
+          </form>
         </div>
-        <button type="submit" className="modal__save">
-          {buttonText}
-        </button>
       </div>
     </div>
   );

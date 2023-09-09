@@ -1,64 +1,71 @@
+import sunnyDay from "../../images/day/sunny.svg";
+import cloudyDay from "../../images/day/cloudy.svg";
+import rain from "../../images/day/rain.svg";
+import storm from "../../images/day/storm.svg";
+import snow from "../../images/day/snow.svg";
+import fog from "../../images/day/fog.svg";
+import moon from "../../images/night/moon.svg";
+import cloudy from "../../images/night/cloudy.svg";
 import "./WeatherCard.css";
-
-const weatherOptions = [
+export const weatherOptions = [
   /*Day*/
 
   {
-    url: require("../../images/day/sunny.svg").default,
+    url: sunnyDay,
     day: true,
     type: "sunny",
   },
   {
-    url: require("../../images/day/cloudy.svg").default,
+    url: cloudyDay,
     day: true,
     type: "cloudy",
   },
   {
-    url: require("../../images/day/rain.svg").default,
+    url: rain,
     day: true,
     type: "rain",
   },
   {
-    url: require("../../images/day/storm.svg").default,
+    url: storm,
     day: true,
     type: "storm",
   },
   {
-    url: require("../../images/day/snow.svg").default,
+    url: snow,
     day: true,
     type: "snow",
   },
-  { url: require("../../images/day/fog.svg").default, day: true, type: "fog" },
+  { url: fog, day: true, type: "fog" },
 
   /*Night*/
 
   {
-    url: require("../../images/night/moon.svg").default,
+    url: moon,
     day: false,
     type: "moon",
   },
   {
-    url: require("../../images/night/cloudy.svg").default,
+    url: cloudy,
     day: false,
     type: "cloudy",
   },
   {
-    url: require("../../images/night/rain.svg").default,
+    url: rain,
     day: false,
     type: "rain",
   },
   {
-    url: require("../../images/night/storm.svg").default,
+    url: storm,
     day: false,
     type: "storm",
   },
   {
-    url: require("../../images/night/snow.svg").default,
+    url: snow,
     day: false,
     type: "snow",
   },
   {
-    url: require("../../images/night/fog.svg").default,
+    url: fog,
     day: false,
     type: "fog",
   },
@@ -67,7 +74,6 @@ const weatherOptions = [
 const WeatherCard = ({ day, type, weatherTemp = "" }) => {
   console.log("weather card");
   const imageSrc = weatherOptions.filter((i) => {
-    console.log(i);
     return i.day === day && i.type === type;
   });
 
@@ -76,7 +82,7 @@ const WeatherCard = ({ day, type, weatherTemp = "" }) => {
   return (
     <section className="weather" id="weather">
       <div className="weather_info">{weatherTemp} °F </div>
-      <img src={imageSrcUrl} className="weather_image" />
+      <img src={imageSrcUrl} className="weather_image" alt="ImageOfWeather" />
     </section>
   );
 };

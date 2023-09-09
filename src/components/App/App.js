@@ -3,9 +3,9 @@ import Header from "../Header/Header";
 /*import WeatherCard from "../WeatherCard/WeatherCard";*/
 /*import ItemCard from "../ItemCard/ItemCard";*/
 import Main from "../Main/Main";
-import Footer from "../footer/Footer";
+import Footer from "../Footer/Footer";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import ItemModal from "../Main/ItemModal/ItemModal";
+import ItemModal from "../ItemModal/ItemModal";
 import { useEffect, useState } from "react";
 import "./App.css";
 import { getForecastWeather, parseWeatherData } from "../../utils/weatherAPi";
