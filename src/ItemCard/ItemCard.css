@@ -1,0 +1,6 @@
+@media screen and (max-width: 590px) {
+  .card__image {
+    height: 164px;
+    width: 164px;
+  }
+}
