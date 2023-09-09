@@ -15,7 +15,7 @@ const ModalWithForm = ({
           <button type="button" className="modal__close" onClick={onClose}>
             &#x2715;
           </button>
-          <h3 className="modal__title"> {title}</h3>
+          <h3 className="modal__title">{title}</h3>
         </div>
         <div className="modal__fieldset">
           <form className="modal__form">{children}</form>
