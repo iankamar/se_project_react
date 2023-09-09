@@ -1,4 +1,4 @@
-/*import logo from "./logo.svg";*/
+/*import logo from "../images/logo.svg";*/
 import Header from "../Header/Header";
 /*import WeatherCard from "../WeatherCard/WeatherCard";*/
 /*import ItemCard from "../ItemCard/ItemCard";*/
@@ -31,7 +31,6 @@ function App() {
     getForecastWeather()
       .then((data) => {
         const temperature = parseWeatherData(data);
-        console.log(temperature);
         setTemp(temperature);
       })
       .catch((error) => {
