@@ -1,3 +1,19 @@
+.weather {
+  position: relative;
+}
+
+.weather_info {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  color: #fff;
+  font-size: 36px;
+}
+
+.weather_image {
+  width: 100%;
+}
+
 @media screen and (max-width: 590px) {
   .weather {
     height: 80px;
