@@ -28,7 +28,7 @@
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   height: 20px;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
 }
 
 .modal__form {
@@ -53,6 +53,7 @@
 .modal__label {
   display: flex;
   flex-direction: column;
+  font-size: 16px;
   width: 100%;
   font-weight: bold;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
@@ -64,8 +65,12 @@
   margin-bottom: 10px;
 }
 
+.modal__label > div {
+  margin: 5px;
+}
+
 .modal__input {
-  font-size: 14px;
+  font-size: 16px;
   padding: 0;
   border: 1px solid rgba(0, 0, 0, 1);
   border-top-style: none;
@@ -79,6 +84,10 @@
 
 .modal__input:last-child {
   margin-bottom: 0px;
+}
+
+.modal__input::placeholder {
+  transform: translateY(8px);
 }
 
 .modal__close {
