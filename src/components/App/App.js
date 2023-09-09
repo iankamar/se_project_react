@@ -73,7 +73,7 @@ function App() {
             </label>
           </div>
           <p className="modal__label"> Select the weather type:</p>
-          <div className="modal__label">
+          <div className="modal__labelSelect">
             <div>
               <input type="radio" id="hot" value="hot" />
               <label>Hot</label>
