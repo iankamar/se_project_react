@@ -1,14 +1,14 @@
-import logo from "./logo.svg";
-import Header from "./Header/Header";
-import WeatherCard from "./WeatherCard/WeatherCard";
-import ItemCard from "./ItemCard/ItemCard";
-import Main from "./Main/Main";
-import Footer from "./footer/Footer";
-import ModalWithForm from "./ModalWithForm/ModalWithForm";
-import ItemModal from "./Main/ItemModal/ItemModal";
+/*import logo from "./logo.svg";*/
+import Header from "../Header/Header";
+import WeatherCard from "../WeatherCard/WeatherCard";
+import ItemCard from "../ItemCard/ItemCard";
+import Main from "../Main/Main";
+import Footer from "../footer/Footer";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import ItemModal from "../Main/ItemModal/ItemModal";
 import { useEffect, useState } from "react";
 import "./App.css";
-import { getForecastWeather, parseWeatherData } from "./utils/weatherAPi";
+import { getForecastWeather, parseWeatherData } from "../utils/weatherAPi";
 
 function App() {
   const weatherTemp = 65;
