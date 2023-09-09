@@ -24,11 +24,11 @@
   color: rgba(0, 0, 0, 1);
   font-weight: 700;
   font-size: 16px;
-  line-height: 30px;
+  line-height: 20px;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   height: 20px;
   margin-top: 0px;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 
 .modal__form {
@@ -45,8 +45,8 @@
   align-items: center;
   border: none;
   width: 100%;
-  margin-top: 0px;
-  margin-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 0px;
 }
 
@@ -54,18 +54,18 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  font-weight: 700px;
+  font-weight: bold;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   color: rgba(0, 0, 0, 1);
+  margin: 0px;
 }
 
 .modal__label:last-child {
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .modal__input {
   font-size: 14px;
-  line-height: 17px;
   padding: 0;
   border: 1px solid rgba(0, 0, 0, 1);
   border-top-style: none;
@@ -73,12 +73,12 @@
   border-left-style: none;
   box-sizing: border-box;
   width: 440px;
-  height: 52px;
+  height: 42px;
   margin: 0px;
 }
 
 .modal__input:last-child {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .modal__close {
@@ -108,7 +108,8 @@
   border: none;
   pointer-events: all;
   background-color: rgba(0, 0, 0, 0.3);
-  margin-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .modal__save:hover {
