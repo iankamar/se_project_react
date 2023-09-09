@@ -114,8 +114,8 @@ input[type="radio"]:checked + label {
 }
 
 .modal__close {
-  margin-top: -20px;
-  margin-left: 480px;
+  margin-top: -30px;
+  margin-left: 495px;
   background-color: transparent;
   border: none;
   position: absolute;

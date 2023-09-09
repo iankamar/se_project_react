@@ -1,7 +1,4 @@
-/*import logo from "../images/logo.svg";*/
 import Header from "../Header/Header";
-/*import WeatherCard from "../WeatherCard/WeatherCard";*/
-/*import ItemCard from "../ItemCard/ItemCard";*/
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
@@ -11,7 +8,6 @@ import "./App.css";
 import { getForecastWeather, parseWeatherData } from "../../utils/weatherAPi";
 
 function App() {
-  /*const weatherTemp = 65;*/
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
