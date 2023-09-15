@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../images/logo.svg";
 import avatar from "../../images/avatar.svg";
+import ToggleSwitch from "../../ToggleSwitch/ToggleSwitch";
 import "./Header.css";
 
 const Header = ({ onCreateModal }) => {
@@ -13,6 +14,7 @@ const Header = ({ onCreateModal }) => {
         <div>Date</div>
       </div>
       <div className="header__avatar-logo">
+        <ToggleSwitch />
         <div>
           <button type="text" onClick={onCreateModal} className="header__item">
             {" "}
