@@ -2,13 +2,6 @@ import React, { useContext, useState } from "react";
 import { currentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
 import "./ToggleSwitch.css";
 
-/*
-* The **ToggleSwitch** component renders a switch used to toogle temperature units.
-*
-* @author [Ian Kamar](https://github.com/iankamar)
-
-*/
-
 const ToggleSwitch = () => {
   const { currentTemperatureUnit, handleToggleSwitchChange } = useContext(
     currentTemperatureUnitContext
