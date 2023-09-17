@@ -18,6 +18,22 @@ const AddItemModal = (handleCloseModal, onAddItem, isOpen) => {
     e.preventDefault();
     onAddItem({ name, link });
   };
+  /*
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onAddItem({ name, link });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onAddItem({ name, link });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onAddItem({ name, link });
+  };
+*/
 
   return (
     <ModalWithForm
@@ -61,15 +77,30 @@ const AddItemModal = (handleCloseModal, onAddItem, isOpen) => {
       <p className="modal__label"> Select the weather type:</p>
       <div className="modal__labelSelect">
         <div>
-          <input type="radio" id="hot" value="hot" />
+          <input
+            type="radio"
+            id="hot"
+            value="hot"
+            onChange={handleNameChange}
+          />
           <label>Hot</label>
         </div>
         <div>
-          <input type="radio" id="warm" value="warm" />
+          <input
+            type="radio"
+            id="warm"
+            value="warm"
+            onChange={handleNameChange}
+          />
           <label>Warm</label>
         </div>
         <div>
-          <input type="radio" id="cold" value="cold" />
+          <input
+            type="radio"
+            id="cold"
+            value="cold"
+            onChange={handleNameChange}
+          />
           <label>Cold</label>
         </div>
       </div>

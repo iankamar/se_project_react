@@ -48,7 +48,6 @@ function App() {
         console.error("Error fetching weather data: ", error);
       });
   }, []);
-  // console.log(currentTemperatureUnit)
   return (
     <div>
       <currentTemperatureUnitContext.Provider
