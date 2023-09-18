@@ -20,6 +20,19 @@
   align-items: center;
 }
 
+.modal__content:item {
+  background-color: #fff;
+  width: 670px;
+  height: 280px;
+  border-radius: 2px;
+  padding: 34px 36px;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+}
+
 .modal__title {
   color: rgba(0, 0, 0, 1);
   font-weight: 700;
@@ -34,7 +47,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 10px;
   border: none;
   align-items: column;
 }
@@ -45,8 +58,17 @@
   border: none;
   width: 100%;
   margin-top: 0;
-  margin-bottom: 15px;
   padding: 0;
+}
+
+.modal__fieldset:item {
+  display: flex;
+  align-items: center;
+  border: none;
+  width: 100%;
+  margin-top: 0;
+  padding: 0;
+  margin-left: 50px;
 }
 
 .modal__warning {
@@ -55,9 +77,13 @@
   border: none;
   width: 100%;
   padding: 0;
-  display: flex;
   flex-direction: column;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  margin-left: 40px;
+  font-weight: bold;
 }
 
 .modal__label {
@@ -157,6 +183,7 @@ input[type="radio"]:checked + label {
   background-color: rgba(0, 0, 0, 0.3);
   margin-top: 10px;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .modal__delete {
@@ -171,11 +198,30 @@ input[type="radio"]:checked + label {
   color: rgba(255, 77, 0, 1);
   margin-bottom: 10px;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
-  font-size: 17px;
+  font-size: 20px;
+  display: center;
+  padding: 0px;
+  font-weight: bold;
+}
+
+.modal__deleteItem {
+  background-color: #fff;
+  height: 24px;
+  width: 100%;
+  border-radius: 1px;
+  cursor: pointer;
+  border: none;
+  pointer-events: all;
+  color: rgba(255, 77, 0, 1);
+  margin-bottom: 10px;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
 }
 
 .modal__cancel {
-  font-size: 17px;
   background-color: #fff;
   height: 24px;
   width: 101px;
@@ -184,9 +230,13 @@ input[type="radio"]:checked + label {
   border: none;
   pointer-events: all;
   color: #000;
-  margin-bottom: 10px;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
-  font-size: 17px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  margin-left: 170px;
+  padding: 0px;
+  font-weight: bold;
 }
 
 .modal__align {

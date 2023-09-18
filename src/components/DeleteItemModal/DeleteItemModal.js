@@ -11,22 +11,24 @@ const DeleteItemModal = ({ handleCloseModal, onDeleteItem, isOpen }) => {
 
   return (
     <ModalWithForm
+      className="modal__content:Item"
       onClose={handleCloseModal}
       isOpen={isOpen}
       onSubmit={handleSubmit}
     >
-      <div className="modal__warning">
-        <p>
-          Are you sure you want to delete this Item? This action is
-          irreversible.
-        </p>
-        <button type="submit" className="modal__delete">
-          Yes, delete item
-        </button>
-        <button type="submit" className="modal__cancel">
-          Cancel
-        </button>
+      <div className="modal__fieldset:item">
+        <div className="modal__warning">
+          Are you sure you want to delete this Item?
+          <br />
+          This action is irreversible.
+        </div>
       </div>
+      <button type="submit" className="modal__delete">
+        Yes, delete item
+      </button>
+      <button type="submit" className="modal__cancel">
+        Cancel
+      </button>
     </ModalWithForm>
   );
 };
