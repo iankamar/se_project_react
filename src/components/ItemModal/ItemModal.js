@@ -1,4 +1,15 @@
-const ItemModal = ({ selectedCard, onClose }) => {
+import React, { useState } from "react";
+import DeleteItemModal from "../DeleteItemModal/DeleteItemModal";
+
+const ItemModal = ({ selectedCard, onClose, onDeleteItem }) => {
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const handleOpenDeleteModal = () => {
+    setIsDeleteModalOpen(true);
+  };
+  const handleCloseDeleteModal = () => {
+    setIsDeleteModalOpen(false);
+  };
+
   return (
     <div className={`modal`}>
       <div className="modal__content">
@@ -8,12 +19,23 @@ const ItemModal = ({ selectedCard, onClose }) => {
         <img src={selectedCard.link} alt={selectedCard.name} />
         <div className="modal__align">
           <h3> {selectedCard.name}</h3>
-          <button type="button" className="modal__delete" onClick={onClose}>
+          <button
+            type="button"
+            className="modal__delete"
+            onClick={handleOpenDeleteModal}
+          >
             Delete item
           </button>
         </div>
         <div>Weather type: {selectedCard.weather}</div>
       </div>
+      {isDeleteModalOpen && (
+        <DeleteItemModal
+          handleCloseModal={handleCloseDeleteModal}
+          onDeleteItem={onDeleteItem}
+          isOpen={isDeleteModalOpen}
+        />
+      )}
     </div>
   );
 };
