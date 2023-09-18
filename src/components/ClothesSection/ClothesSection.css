@@ -1,0 +1,10 @@
+.clothes__section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.clothes__items {
+  border: 1px solid #ccc;
+  padding: 20px;
+}

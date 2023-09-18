@@ -4,36 +4,33 @@ import ModalWithForm from "../components/ModalWithForm/ModalWithForm";
 const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
   const [name, setName] = useState("");
   const handleNameChange = (e) => {
-    console.log(e.target.value);
     setName(e.target.value);
   };
 
   const [link, setUrl] = useState("");
   const handleUrlChange = (e) => {
-    console.log(e.target.value);
     setUrl(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onAddItem({ name, link });
+  const [weatherType, setWeatherType] = useState("");
+  const handleWeatherTypeChange = (e) => {
+    if (weatherType === e.target.value) {
+      setWeatherType("");
+    } else {
+      setWeatherType(e.target.value);
+    }
   };
+
   /*
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onAddItem({ name, link });
-  };
+  const handleWeatherTypeChange = (e) => {
+    setWeatherType((e.target.value)
+  };*/
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddItem({ name, link });
+    onAddItem({ name, link, weatherType });
+    handleCloseModal();
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onAddItem({ name, link });
-  };
-*/
 
   return (
     <ModalWithForm
@@ -77,15 +74,33 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
       <p className="modal__label"> Select the weather type:</p>
       <div className="modal__labelSelect">
         <div>
-          <input type="radio" id="hot" value="hot" />
+          <input
+            type="radio"
+            id="hot"
+            value="hot"
+            checked={weatherType === "hot"}
+            onChange={handleWeatherTypeChange}
+          />
           <label>Hot</label>
         </div>
         <div>
-          <input type="radio" id="warm" value="warm" />
+          <input
+            type="radio"
+            id="warm"
+            value="warm"
+            checked={weatherType === "warm"}
+            onChange={handleWeatherTypeChange}
+          />
           <label>Warm</label>
         </div>
         <div>
-          <input type="radio" id="cold" value="cold" />
+          <input
+            type="radio"
+            id="cold"
+            value="cold"
+            checked={weatherType === "cold"}
+            onChange={handleWeatherTypeChange}
+          />
           <label>Cold</label>
         </div>
       </div>
