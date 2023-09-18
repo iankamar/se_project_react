@@ -148,6 +148,26 @@ input[type="radio"]:checked + label {
   margin-bottom: 10px;
 }
 
+.modal__delete {
+  font-size: 17px;
+  background-color: #fff;
+  height: 24px;
+  width: 101px;
+  border-radius: 1px;
+  cursor: pointer;
+  border: none;
+  pointer-events: all;
+  color: rgba(255, 77, 0, 1);
+  margin-bottom: 10px;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+}
+
+.modal__align {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .modal__save:hover {
   opacity: 0.5;
 }

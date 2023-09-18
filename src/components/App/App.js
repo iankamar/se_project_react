@@ -11,6 +11,8 @@ import AddItemModal from "../../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
 import ClothingSection from "../ClothesSection/ClothesSection";
 import { defaultClothingItems } from "../../utils/Constants";
+import DeleteItemModal from "../DeleteItemModal/DeleteItemModal";
+
 import "./App.css";
 
 function App() {
@@ -18,6 +20,16 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+
+  const handleOpenDeleteModal = () => {
+    setIsDeleteModalOpen(true);
+  };
+
+  const handleCloseDeleteModal = () => {
+    setIsDeleteModalOpen(false);
+  };
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -39,6 +51,15 @@ function App() {
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
+  };
+
+  const onDeleteItem = (itemId) => {
+    let items = [...clothingItems];
+    const index = items.findIndex((item) => item.id === itemId);
+    if (index !== -1) {
+      items.splice(index, 1);
+    }
+    setClothingItems(items);
   };
 
   useEffect(() => {
@@ -77,6 +98,13 @@ function App() {
         )}
         {activeModal === "preview" && (
           <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
+        )}
+        {isDeleteModalOpen && (
+          <DeleteItemModal
+            handleCloseModal={handleCloseDeleteModal}
+            onDeleteItem={onDeleteItem}
+            isOpen={isDeleteModalOpen}
+          />
         )}
       </currentTemperatureUnitContext.Provider>
     </div>
