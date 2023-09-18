@@ -49,6 +49,17 @@
   padding: 0;
 }
 
+.modal__warning {
+  display: flex;
+  align-items: center;
+  border: none;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+}
+
 .modal__label {
   display: flex;
   flex-direction: column;
@@ -152,7 +163,7 @@ input[type="radio"]:checked + label {
   font-size: 17px;
   background-color: #fff;
   height: 24px;
-  width: 101px;
+  width: 100%;
   border-radius: 1px;
   cursor: pointer;
   border: none;
@@ -160,6 +171,22 @@ input[type="radio"]:checked + label {
   color: rgba(255, 77, 0, 1);
   margin-bottom: 10px;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 17px;
+}
+
+.modal__cancel {
+  font-size: 17px;
+  background-color: #fff;
+  height: 24px;
+  width: 101px;
+  border-radius: 1px;
+  cursor: pointer;
+  border: none;
+  pointer-events: all;
+  color: #000;
+  margin-bottom: 10px;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 17px;
 }
 
 .modal__align {

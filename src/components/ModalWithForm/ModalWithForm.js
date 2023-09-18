@@ -21,9 +21,6 @@ const ModalWithForm = ({
         <div className="modal__fieldset">
           <form className="modal__form" onSubmit={onSubmit}>
             {children}
-            <button type="submit" className="modal__save">
-              {buttonText}
-            </button>
           </form>
         </div>
       </div>
