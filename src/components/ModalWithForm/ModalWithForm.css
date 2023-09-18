@@ -39,21 +39,18 @@
   font-size: 16px;
   line-height: 20px;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
-  height: 20px;
-  margin: 0px;
 }
 
 .modal__form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 10px;
   border: none;
   align-items: column;
 }
 
 .modal__fieldset {
-  display: flex;
+  /*display: flex;*/
   align-items: center;
   border: none;
   width: 100%;
@@ -82,7 +79,6 @@
   font-size: 20px;
   margin-bottom: 30px;
   text-align: center;
-  margin-left: 40px;
   font-weight: bold;
 }
 
@@ -234,7 +230,7 @@ input[type="radio"]:checked + label {
   font-size: 20px;
   display: flex;
   justify-content: center;
-  margin-left: 170px;
+  margin-left: 190px;
   padding: 0px;
   font-weight: bold;
 }
