@@ -9,7 +9,7 @@ import { currentTemperatureUnitContext } from "../../contexts/CurrentTemperature
 import { Switch, Route } from "react-router-dom";
 import AddItemModal from "../../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
-import ClothingSection from "../ClothesSection/ClothesSection";
+import ClothesSection from "../Profile/ClothesSection/ClothesSection";
 import { defaultClothingItems } from "../../utils/Constants";
 import DeleteItemModal from "../DeleteItemModal/DeleteItemModal";
 
@@ -84,7 +84,7 @@ function App() {
           </Route>
           <Route path="/profile">
             <Profile>
-              <ClothingSection clothes={defaultClothingItems} />
+              <ClothesSection clothes={clothingItems} />
             </Profile>
           </Route>
         </Switch>

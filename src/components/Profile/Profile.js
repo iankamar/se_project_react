@@ -5,7 +5,7 @@ import "./Profile.css";
 
 const Profile = () => {
   return (
-    <div className="profile__avatar-logo">
+    <div className="profile__avatar">
       <div>
         <img src={avatar} alt="avatar" />{" "}
       </div>

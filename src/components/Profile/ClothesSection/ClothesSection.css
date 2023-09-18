@@ -2,9 +2,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .clothes__items {
   border: 1px solid #ccc;
   padding: 20px;
+  width: 100%;
 }

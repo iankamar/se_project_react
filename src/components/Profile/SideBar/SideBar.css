@@ -1,0 +1,15 @@
+.sidebar {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar__image {
+  width: 50px;
+  height: 50px;
+}
+
+.sidebar__title {
+  margin-top: 10px;
+}
