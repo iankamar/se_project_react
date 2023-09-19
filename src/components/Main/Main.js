@@ -2,17 +2,16 @@ import { defaultClothingItems } from "../../utils/Constants";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
 import { useMemo, useContext } from "react";
-import { currentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
+import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import "./Main.css";
 
 function Main({ weatherTemp, onSelectCard }) {
-  const { currentTemperatureUnit } = useContext(currentTemperatureUnitContext);
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   let temp =
     typeof weatherTemp === "number"
       ? weatherTemp
       : weatherTemp?.temperature?.[currentTemperatureUnit] || 999;
 
-  // Convert Fahrenheit to Celsius
   temp = currentTemperatureUnit === "F" ? temp : ((temp - 32) * 5) / 9;
 
   const weatherType = useMemo(() => {

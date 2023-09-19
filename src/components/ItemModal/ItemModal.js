@@ -27,7 +27,9 @@ const ItemModal = ({ selectedCard, onClose, onDeleteItem }) => {
             Delete item
           </button>
         </div>
-        <div>Weather type: {selectedCard.weather}</div>
+        <div className="modal__weatherType">
+          Weather type: {selectedCard.weather}
+        </div>
       </div>
       {isDeleteModalOpen && (
         <DeleteItemModal

@@ -168,6 +168,13 @@ input[type="radio"]:checked + label {
   cursor: pointer;
 }
 
+.modal__weatherType {
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 1);
+  font-weight: bold;
+}
+
 .modal__save {
   height: 36px;
   width: 124px;
@@ -225,7 +232,7 @@ input[type="radio"]:checked + label {
   cursor: pointer;
   border: none;
   pointer-events: all;
-  color: #000;
+  color: rgba(0, 0, 0, 0.3);
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-size: 20px;
   display: flex;

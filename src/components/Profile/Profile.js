@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import avatar from "../../images/avatar.svg";
 import { Link } from "react-router-dom";
-import ProfileItemCard from "../ProfileItemCard/ProfileItemCard";
+import ProfileItemCard from "./ProfileItemCard/ProfileItemCard";
 import { defaultClothingItems } from "../../utils/Constants";
 import "./Profile.css";
 import ItemModal from "../ItemModal/ItemModal";
