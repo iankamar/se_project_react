@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import avatar from "../../images/avatar.svg";
 import { Link } from "react-router-dom";
-import ItemCard from "../ItemCard/ItemCard";
+import ProfileItemCard from "../ProfileItemCard/ProfileItemCard";
 import { defaultClothingItems } from "../../utils/Constants";
 import "./Profile.css";
 import ItemModal from "../ItemModal/ItemModal";
@@ -44,7 +44,7 @@ const Profile = () => {
           </div>
           <div className="profile__itemsCard">
             {defaultClothingItems.map((item) => (
-              <ItemCard
+              <ProfileItemCard
                 key={item._id}
                 item={item}
                 onSelectCard={() => onSelectCard(item)}
