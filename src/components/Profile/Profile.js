@@ -19,7 +19,6 @@ const Profile = () => {
 
   return (
     <div className="profile">
-      <div className="sidebar">{/* Sidebar content goes here */}</div>
       <div className="profile__content">
         <div className="profile__wrapper">
           <div className="profile__avatar">
@@ -38,6 +37,7 @@ const Profile = () => {
             </button>
           </div>
         </div>
+
         <div className="profile__itemSection">
           <div className="profile__sidebar">
             {/* Sidebar content goes here */}

@@ -14,10 +14,6 @@ function Main({ weatherTemp, onSelectCard }) {
 
   // Convert Fahrenheit to Celsius
   temp = currentTemperatureUnit === "F" ? temp : ((temp - 32) * 5) / 9;
-  /*
-  weather.temperature.F = `${Math.round(data.main.temp)}°F`;
-  weather.temperature.C = `${Math.round((data.main.temp - 32) * 5/9)}°C`;
-  */
 
   const weatherType = useMemo(() => {
     if (currentTemperatureUnit === "F") {
