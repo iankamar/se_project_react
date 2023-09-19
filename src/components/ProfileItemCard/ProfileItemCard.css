@@ -1,5 +1,8 @@
 .card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card__image {
@@ -9,11 +12,10 @@
   border-radius: 15px;
 }
 
-.card__title {
+.card__name {
   position: absolute;
-  top: 10px;
-  left: 10px;
   background-color: #fff;
   z-index: 1;
   color: rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
 }
