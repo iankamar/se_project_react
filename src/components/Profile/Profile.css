@@ -1,3 +1,12 @@
+.profile__itemSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .profile__avatar {
   display: flex;
   margin-left: 20px;
@@ -33,4 +42,23 @@
 .profile__items {
   display: flex;
   justify-content: flex-start;
+}
+
+.profile__itemsCard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 50%; /* Set the width to 50% */
+  float: right; /* Float the element to the right */
+}
+
+.profile__sidebar {
+  display: flex;
+  margin-left: 20px;
+  gap: 20px;
+  align-items: center;
+  width: 400px;
+  height: 56px;
+  top: 119px;
+  left: 40px;
 }

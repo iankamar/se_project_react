@@ -38,8 +38,11 @@ const Profile = () => {
             </button>
           </div>
         </div>
-        <div className="clothes__section">
-          <div className="card__items">
+        <div className="profile__itemSection">
+          <div className="profile__sidebar">
+            {/* Sidebar content goes here */}
+          </div>
+          <div className="profile__itemsCard">
             {defaultClothingItems.map((item) => (
               <ItemCard
                 key={item._id}
