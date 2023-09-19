@@ -14,26 +14,31 @@ export const weatherOptions = [
     url: sunnyDay,
     day: true,
     type: "sunny",
+    tempRange: "hot",
   },
   {
     url: cloudyDay,
     day: true,
     type: "cloudy",
+    tempRange: "warm",
   },
   {
     url: rain,
     day: true,
     type: "rain",
+    tempRange: "cold",
   },
   {
     url: storm,
     day: true,
     type: "storm",
+    tempRange: "cold",
   },
   {
     url: snow,
     day: true,
     type: "snow",
+    tempRange: "cold",
   },
   { url: fog, day: true, type: "fog" },
 
@@ -43,31 +48,37 @@ export const weatherOptions = [
     url: moon,
     day: false,
     type: "moon",
+    tempRange: "hot",
   },
   {
     url: cloudy,
     day: false,
     type: "cloudy",
+    tempRange: "warm",
   },
   {
     url: rain,
     day: false,
     type: "rain",
+    tempRange: "cold",
   },
   {
     url: storm,
     day: false,
     type: "storm",
+    tempRange: "cold",
   },
   {
     url: snow,
     day: false,
     type: "snow",
+    tempRange: "cold",
   },
   {
     url: fog,
     day: false,
     type: "fog",
+    tempRange: "cold",
   },
 ];
 

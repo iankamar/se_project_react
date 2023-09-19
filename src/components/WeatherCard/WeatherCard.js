@@ -5,8 +5,9 @@ import "./WeatherCard.css";
 
 const WeatherCard = ({ day, type, weatherTemp = "" }) => {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+
   const imageSrc = weatherOptions.filter((i) => {
-    return i.day === day && i.type === type;
+    return i.day === day && i.tempRange === type;
   });
 
   const imageSrcUrl = imageSrc.length > 0 ? imageSrc[0].url : "";

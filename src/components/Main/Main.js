@@ -5,6 +5,11 @@ import { useMemo, useContext } from "react";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import "./Main.css";
 
+function isDaytime() {
+  const currentHour = new Date().getHours();
+  return currentHour >= 6 && currentHour < 18;
+}
+
 function Main({ weatherTemp, onSelectCard }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   let temp =
@@ -18,17 +23,17 @@ function Main({ weatherTemp, onSelectCard }) {
     if (currentTemperatureUnit === "F") {
       if (temp >= 86) {
         return "hot";
-      } else if (temp >= 66 && weatherTemp <= 85) {
+      } else if (temp >= 60 && weatherTemp <= 85) {
         return "warm";
-      } else if (temp <= 65) {
+      } else if (temp <= 60) {
         return "cold";
       }
     } else if (currentTemperatureUnit === "C") {
       if (temp >= 30) {
         return "hot";
-      } else if (temp >= 19 && temp <= 29) {
+      } else if (temp >= 15 && temp <= 29) {
         return "warm";
-      } else if (temp <= 18) {
+      } else if (temp <= 15) {
         return "cold";
       }
     }
@@ -41,8 +46,8 @@ function Main({ weatherTemp, onSelectCard }) {
   return (
     <main className="main">
       <WeatherCard
-        day={false}
-        type="rain"
+        day={isDaytime()}
+        type={weatherType}
         weatherTemp={temp}
         currentTemperatureUnit={currentTemperatureUnit}
       />
