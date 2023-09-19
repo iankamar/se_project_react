@@ -1,42 +1,36 @@
-/*
 const BASE_URL = "http://localhost:3001";
 
-const handleServerResponseeee = (res) => {
+const handleServerResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
 
 const getItemList = () => {
   return fetch(`${BASE_URL}/items`, {
-    // REST
     headers: {
       "Content-Type": "application/json",
     },
   }).then(handleServerResponse);
 };
 
-const addItem = ({ name, weather, imageUrl }) => {
+const addItem = ({ name, imageUrl, weather }) => {
   return fetch(`${BASE_URL}/items`, {
     method: "POST",
     headers: {
-      "Content-Type": "applicatoin/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       name,
-      weather,
       imageUrl,
+      weather,
     }),
   }).then(handleServerResponse);
 };
 
 const removeItem = (id) => {
-  return (
-    fetch(`${BASE_URL}/items/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }),
-    then(handleServerResponse)
-  );
+  return fetch(`${BASE_URL}/items/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then(handleServerResponse);
 };
-*/
