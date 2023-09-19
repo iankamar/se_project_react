@@ -3,8 +3,34 @@
   margin-left: 20px;
   gap: 20px;
   align-items: center;
-  width: 229px;
+  width: 400px;
   height: 56px;
   top: 119px;
   left: 40px;
+}
+
+.profile__item {
+  color: rgba(0, 0, 0, 0.6);
+  background-color: #fff;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+}
+
+.profile__wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+  padding: 0 20px;
+  top: 32px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+}
+
+.profile__items {
+  display: flex;
+  justify-content: flex-start;
 }

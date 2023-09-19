@@ -21,16 +21,24 @@ const Profile = () => {
     <div className="profile">
       <div className="sidebar">{/* Sidebar content goes here */}</div>
       <div className="profile__content">
-        <div className="profile__avatar">
-          <div>
-            <img src={avatar} alt="avatar" />
+        <div className="profile__wrapper">
+          <div className="profile__avatar">
+            <div>
+              <img src={avatar} alt="avatar" />
+            </div>
+            <div>
+              <Link to="/profile">Name</Link>
+            </div>
           </div>
-          <div>
-            <Link to="/profile">Name</Link>
+          <div className="profile__items">
+            <h4>Your items</h4>
+            <button type="text" className="profile__item">
+              {" "}
+              + Add New{" "}
+            </button>
           </div>
         </div>
         <div className="clothes__section">
-          <h2>Your items</h2>
           <div className="card__items">
             {defaultClothingItems.map((item) => (
               <ItemCard
@@ -42,11 +50,7 @@ const Profile = () => {
           </div>
         </div>
         {selectedCard && (
-          <ItemModal
-            selectedCard={selectedCard}
-            onClose={onClose}
-            // Pass your onDeleteItem function here
-          />
+          <ItemModal selectedCard={selectedCard} onClose={onClose} />
         )}
       </div>
     </div>
