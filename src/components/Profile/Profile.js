@@ -5,6 +5,8 @@ import ProfileItemCard from "./ProfileItemCard/ProfileItemCard";
 import { defaultClothingItems } from "../../utils/Constants";
 import "./Profile.css";
 import ItemModal from "../ItemModal/ItemModal";
+import SideBar from "./SideBar/SideBar";
+import ClothesSection from "./ClothesSection/ClothesSection";
 
 const Profile = () => {
   const [selectedCard, setSelectedCard] = useState(null);
