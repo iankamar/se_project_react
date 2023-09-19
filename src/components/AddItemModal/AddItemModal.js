@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ModalWithForm from "../components/ModalWithForm/ModalWithForm";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
   const [name, setName] = useState("");
@@ -20,11 +20,6 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
       setWeatherType(e.target.value);
     }
   };
-
-  /*
-  const handleWeatherTypeChange = (e) => {
-    setWeatherType((e.target.value)
-  };*/
 
   const handleSubmit = (e) => {
     e.preventDefault();

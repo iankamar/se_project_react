@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { getForecastWeather, parseWeatherData } from "../../utils/weatherAPi";
 import { currentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { Switch, Route } from "react-router-dom";
-import AddItemModal from "../../AddItemModal/AddItemModal";
+import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
 import ClothesSection from "../Profile/ClothesSection/ClothesSection";
 import { defaultClothingItems } from "../../utils/Constants";

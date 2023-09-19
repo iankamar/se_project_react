@@ -3,7 +3,7 @@ import ItemCard from "../../ItemCard/ItemCard";
 import { defaultClothingItems } from "../../../utils/Constants";
 import "./ClothesSection.css";
 
-const ClothingSection = ({ onSelectCard, onDeleteCard, onAddNew }) => {
+const ClothesSection = ({ onSelectCard, onDeleteCard, onAddNew }) => {
   return (
     <div className="clothes__section">
       <h1>Clothing Section</h1>
@@ -26,4 +26,4 @@ const ClothingSection = ({ onSelectCard, onDeleteCard, onAddNew }) => {
   );
 };
 
-export default ClothingSection;
+export default ClothesSection;
