@@ -1,16 +1,18 @@
 import React from "react";
 import "./SideBar.css";
+import avatar from "../../../images/avatar.svg";
+import { Link } from "react-router-dom";
 
 class SideBar extends React.Component {
   render() {
     return (
-      <div className="sidebar">
-        <img
-          className="sidebar__image"
-          src="path_to_avatar_image"
-          alt="User Avatar"
-        />
-        <h2 className="sidebar__title"> Username</h2>
+      <div className="profile__avatar">
+        <div>
+          <img src={avatar} alt="avatar" />
+        </div>
+        <div>
+          <Link to="/profile">Name</Link>
+        </div>
       </div>
     );
   }
