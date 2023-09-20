@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DeleteItemModal from "../DeleteItemModal/DeleteItemModal";
 
-const ItemModal = ({ selectedCard, onClose, onDeleteItem }) => {
+const ItemModal = ({ selectedCard, onClose, handleDeleteItem }) => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const handleOpenDeleteModal = () => {
     setIsDeleteModalOpen(true);
@@ -34,8 +34,9 @@ const ItemModal = ({ selectedCard, onClose, onDeleteItem }) => {
       {isDeleteModalOpen && (
         <DeleteItemModal
           handleCloseModal={handleCloseDeleteModal}
-          onDeleteItem={onDeleteItem}
+          handleDeleteItem={handleDeleteItem}
           isOpen={isDeleteModalOpen}
+          itemId={selectedCard.id}
         />
       )}
     </div>

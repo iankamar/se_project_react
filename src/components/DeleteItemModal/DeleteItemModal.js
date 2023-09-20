@@ -1,11 +1,17 @@
 import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../ModalWithForm/ModalWithForm.css";
+import ItemCard from "../ItemCard/ItemCard";
 
-const DeleteItemModal = ({ handleCloseModal, onDeleteItem, isOpen }) => {
+const DeleteItemModal = ({
+  handleCloseModal,
+  handleDeleteItem,
+  isOpen,
+  itemId,
+}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    /*onDeleteItem();*/
+    handleDeleteItem(itemId);
     handleCloseModal();
   };
 

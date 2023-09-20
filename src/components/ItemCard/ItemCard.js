@@ -1,7 +1,7 @@
 import React from "react";
 import "./ItemCard.css";
 
-const ItemCard = ({ item, onSelectCard, onDeleteCard }) => {
+const ItemCard = ({ item, onSelectCard }) => {
   return (
     <div>
       <div>

@@ -3,7 +3,7 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getForecastWeather, parseWeatherData } from "../../utils/weatherAPi";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { Switch, Route } from "react-router-dom";
@@ -44,29 +44,26 @@ function App() {
     setSelectedCard(card);
   };
 
-  const onAddItem = (newItem) => {
-    setClothingItems((prevItems) => [...prevItems, newItem]);
+  const onAddItem = (itemCard) => {
+    setClothingItems([...clothingItems, itemCard]);
   };
+
+  console.log(clothingItems);
 
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
 
-  const onDeleteItem = (itemId) => {
-    setClothingItems((prevItems) =>
-      prevItems.filter((item) => item.id !== itemId)
-    );
-  };
-  /*
-  const onDeleteItem = (itemId) => {
+  const handleDeleteItem = (itemId) => {
     let items = [...clothingItems];
     const index = items.findIndex((item) => item.id === itemId);
     if (index !== -1) {
       items.splice(index, 1);
     }
     setClothingItems(items);
-  }; */
+    setIsDeleteModalOpen(false);
+  };
 
   useEffect(() => {
     getForecastWeather()
@@ -89,7 +86,7 @@ function App() {
             <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
           </Route>
           <Route path="/profile">
-            <Profile>
+            <Profile handleAddClick={setActiveModal}>
               <ClothesSection clothes={clothingItems} />
             </Profile>
           </Route>
@@ -99,6 +96,7 @@ function App() {
           <AddItemModal
             handleCloseModal={handleCloseModal}
             isOpen={activeModal === "create"}
+            // onAddItem={onAddItem}
             onAddItem={onAddItem}
           />
         )}
@@ -108,8 +106,9 @@ function App() {
         {isDeleteModalOpen && (
           <DeleteItemModal
             handleCloseModal={handleCloseDeleteModal}
-            onDeleteItem={onDeleteItem}
+            handleDeleteItem={handleDeleteItem}
             isOpen={isDeleteModalOpen}
+            itemId={selectedCard.id}
           />
         )}
       </CurrentTemperatureUnitContext.Provider>

@@ -4,10 +4,12 @@ import "./Profile.css";
 import ItemModal from "../ItemModal/ItemModal";
 import SideBar from "./SideBar/SideBar";
 import ClothesSection from "./ClothesSection/ClothesSection";
+import AddItemModal from "../AddItemModal/AddItemModal";
 
-const Profile = () => {
+const Profile = ({ handleAddClick }) => {
   const [selectedCard, setSelectedCard] = useState(null);
-  const [showModal, setShowModal] = useState(false);
+  const [addItemModalOpen, setAddItemModalOpen] = useState(false);
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
 
   const onSelectCard = (item) => {
     setSelectedCard(item);
@@ -15,12 +17,20 @@ const Profile = () => {
 
   const onClose = () => {
     setSelectedCard(null);
-    setShowModal(false);
   };
 
-  const onCreateModal = () => {
-    setShowModal(true);
-    console.log(showModal);
+  const handleAddItem = (newItem) => {
+    console.log(newItem);
+    newItem.preventDefault();
+    setClothingItems((prevItems) => [...prevItems, newItem]);
+  };
+
+  const handleOpenAddItemModal = () => {
+    setAddItemModalOpen(true);
+  };
+
+  const handleCloseAddItemModal = () => {
+    setAddItemModalOpen(false);
   };
 
   return (
@@ -31,8 +41,8 @@ const Profile = () => {
           <div className="profile__items">
             <h4>Your items</h4>
             <button
-              type="text"
-              onClick={onCreateModal}
+              type="submit"
+              onClick={() => handleAddClick("create")}
               className="profile__item"
             >
               {" "}
@@ -56,7 +66,20 @@ const Profile = () => {
           </div>
         </div>
         {selectedCard && (
-          <ItemModal selectedCard={selectedCard} onClose={onClose} />
+          <ItemModal
+            selectedCard={selectedCard}
+            onClose={onClose}
+            handleDeleteItem={() => console.log(22)}
+          />
+        )}
+        {/* remove this section below */}
+        {addItemModalOpen && (
+          <AddItemModal
+            isOpen={addItemModalOpen}
+            // onAddItem={handleAddItem}
+            onAddItem={() => console.log(5)}
+            handleCloseModal={handleCloseAddItemModal}
+          />
         )}
       </div>
     </div>
