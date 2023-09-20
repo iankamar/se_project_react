@@ -57,7 +57,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
             type="url"
             name="link"
             minLength="1"
-            maxLength="30"
+            maxLength="2048"
             value={link}
             onChange={handleUrlChange}
             className="modal__input"
@@ -65,6 +65,13 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
             required
           />
         </label>
+        {link && (
+          <img
+            src={link}
+            alt="Preview"
+            style={{ width: "100px", height: "100px" }}
+          />
+        )}
       </div>
       <p className="modal__label"> Select the weather type:</p>
       <div className="modal__labelSelect">
@@ -99,6 +106,9 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
           <label>Cold</label>
         </div>
       </div>
+      <button type="submit" className="modal__save">
+        Add Garment
+      </button>
     </ModalWithForm>
   );
 };

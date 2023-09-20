@@ -7,6 +7,7 @@ import ClothesSection from "./ClothesSection/ClothesSection";
 
 const Profile = () => {
   const [selectedCard, setSelectedCard] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const onSelectCard = (item) => {
     setSelectedCard(item);
@@ -14,6 +15,12 @@ const Profile = () => {
 
   const onClose = () => {
     setSelectedCard(null);
+    setShowModal(false);
+  };
+
+  const onCreateModal = () => {
+    setShowModal(true);
+    console.log(showModal);
   };
 
   return (
@@ -23,7 +30,11 @@ const Profile = () => {
           <SideBar />
           <div className="profile__items">
             <h4>Your items</h4>
-            <button type="text" className="profile__item">
+            <button
+              type="text"
+              onClick={onCreateModal}
+              className="profile__item"
+            >
               {" "}
               + Add New{" "}
             </button>

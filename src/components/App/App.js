@@ -44,8 +44,8 @@ function App() {
     setSelectedCard(card);
   };
 
-  const onAddItem = (values) => {
-    console.log(values);
+  const onAddItem = (newItem) => {
+    setClothingItems((prevItems) => [...prevItems, newItem]);
   };
 
   const handleToggleSwitchChange = () => {
@@ -54,13 +54,19 @@ function App() {
   };
 
   const onDeleteItem = (itemId) => {
+    setClothingItems((prevItems) =>
+      prevItems.filter((item) => item.id !== itemId)
+    );
+  };
+  /*
+  const onDeleteItem = (itemId) => {
     let items = [...clothingItems];
     const index = items.findIndex((item) => item.id === itemId);
     if (index !== -1) {
       items.splice(index, 1);
     }
     setClothingItems(items);
-  };
+  }; */
 
   useEffect(() => {
     getForecastWeather()
