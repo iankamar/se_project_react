@@ -32,7 +32,7 @@ const Header = ({ onCreateModal }) => {
         <div>
           <button type="text" onClick={onCreateModal} className="header__item">
             {" "}
-            + Add New Clothes{" "}
+            + Add New Clothes Hello{" HElloS "}
           </button>
         </div>
         <Link to="/profile">Name</Link>

@@ -9,10 +9,9 @@ const DeleteItemModal = ({
   isOpen,
   itemId,
 }) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleDeleteItem(itemId);
-    handleCloseModal();
+  console.log(handleDeleteItem);
+  const handleSubmit = () => {
+    handleDeleteItem();
   };
 
   return (

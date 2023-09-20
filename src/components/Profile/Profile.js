@@ -33,6 +33,12 @@ const Profile = ({ handleAddClick }) => {
     setAddItemModalOpen(false);
   };
 
+  const handleDeleteItem = (id) => {
+    setClothingItems((prevItems) =>
+      prevItems.filter((item) => item._id !== id)
+    );
+  };
+
   return (
     <div className="profile">
       <div className="profile__content">
@@ -69,16 +75,7 @@ const Profile = ({ handleAddClick }) => {
           <ItemModal
             selectedCard={selectedCard}
             onClose={onClose}
-            handleDeleteItem={() => console.log(22)}
-          />
-        )}
-        {/* remove this section below */}
-        {addItemModalOpen && (
-          <AddItemModal
-            isOpen={addItemModalOpen}
-            // onAddItem={handleAddItem}
-            onAddItem={() => console.log(5)}
-            handleCloseModal={handleCloseAddItemModal}
+            handleDeleteItem={() => handleDeleteItem(selectedCard._id)}
           />
         )}
       </div>

@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import DeleteItemModal from "../DeleteItemModal/DeleteItemModal";
 
-const ItemModal = ({ selectedCard, onClose, handleDeleteItem }) => {
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
-  const handleOpenDeleteModal = () => {
-    setIsDeleteModalOpen(true);
-  };
-  const handleCloseDeleteModal = () => {
-    setIsDeleteModalOpen(false);
-  };
-
+const ItemModal = ({ selectedCard, onClose, handleOpenDeleteModal }) => {
   return (
     <div className={`modal`}>
       <div className="modal__content">
@@ -31,14 +23,6 @@ const ItemModal = ({ selectedCard, onClose, handleDeleteItem }) => {
           Weather type: {selectedCard.weather}
         </div>
       </div>
-      {isDeleteModalOpen && (
-        <DeleteItemModal
-          handleCloseModal={handleCloseDeleteModal}
-          handleDeleteItem={handleDeleteItem}
-          isOpen={isDeleteModalOpen}
-          itemId={selectedCard.id}
-        />
-      )}
     </div>
   );
 };

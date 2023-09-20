@@ -10,7 +10,7 @@ function isDaytime() {
   return currentHour >= 6 && currentHour < 18;
 }
 
-function Main({ weatherTemp, onSelectCard }) {
+function Main({ weatherTemp, onSelectCard, clothingItems }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   let temp =
     typeof weatherTemp === "number"
@@ -39,7 +39,7 @@ function Main({ weatherTemp, onSelectCard }) {
     }
   }, [temp, currentTemperatureUnit]);
 
-  const filteredCards = defaultClothingItems.filter((item) => {
+  const filteredCards = clothingItems.filter((item) => {
     return item.weather.toLowerCase() === weatherType;
   });
 
