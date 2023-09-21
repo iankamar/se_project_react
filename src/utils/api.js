@@ -1,9 +1,3 @@
-/*
-export const headers = {
-  authorization: "",
-  "Content-Type": "application/json",
-};
-*/
 export const baseUrl = "http://localhost:3001";
 
 export const handleServerResponse = (res) => {
@@ -19,16 +13,16 @@ export const getItemList = () => {
   }).then(handleServerResponse);
 };
 
-export const addItem = (item) => {
+export const addItem = (id) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      name: item.name,
-      link: item.link,
-      weatherType: item.weatherType,
+      name: id.name,
+      link: id.link,
+      weatherType: id.weather,
     }),
   }).then(handleServerResponse);
 };

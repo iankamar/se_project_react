@@ -11,7 +11,7 @@ import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
 import ClothesSection from "../Profile/ClothesSection/ClothesSection";
 import { defaultClothingItems } from "../../utils/Constants";
-/*import DeleteItemModal from "../DeleteItemModal/DeleteItemModal";*/
+import DeleteItemModal from "../DeleteItemModal/DeleteItemModal";
 import { getItemList, addItem, removeItem } from "../../utils/Api";
 import "./App.css";
 /*import { Link } from "react-router-dom/cjs/react-router-dom.min";*/
@@ -21,9 +21,9 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
-  /*const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);*/
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
-  /*
+
   const handleOpenDeleteModal = () => {
     setIsDeleteModalOpen(true);
   };
@@ -31,7 +31,7 @@ function App() {
   const handleCloseDeleteModal = () => {
     setIsDeleteModalOpen(false);
   };
-*/
+
   const handleCreateModal = () => {
     setActiveModal("create");
   };
@@ -45,12 +45,12 @@ function App() {
     setSelectedCard(card);
   };
 
-  const handleDeleteItem = (unit) => {
-    removeItem(unit.id)
+  const handleDeleteItem = (itemCard) => {
+    removeItem(itemCard.id)
       .then((data) => {
-        const deleteId = unit.id;
-        const updateItems = clothingItems.filter((item) => {
-          return item.id !== deleteId;
+        const deleteId = itemCard.id;
+        const updateItems = clothingItems.filter((id) => {
+          return id.id !== deleteId;
         });
         setClothingItems(updateItems);
         handleCloseModal();
@@ -60,19 +60,19 @@ function App() {
       });
   };
 
-  const handleAddItem = (unit) => {
-    const item = {
-      name: unit.name,
-      link: unit.link,
-      weatherType: unit.weatherType,
+  const handleAddItem = (itemCard) => {
+    const id = {
+      name: itemCard.name,
+      link: itemCard.link,
+      weather: itemCard.weather,
     };
-    addItem(item)
-      .then((item) => {
-        setClothingItems([item, ...clothingItems]);
+    addItem(id)
+      .then((id) => {
+        setClothingItems([id, ...clothingItems]);
         handleCloseModal();
       })
       .catch((error) => {
-        console.error("Error fetching item: ", error);
+        console.error("Error fetching id: ");
       });
   };
 
@@ -101,8 +101,8 @@ function App() {
     setClothingItems((prevItems) =>
       prevItems.filter((item) => item._id !== selectedCard._id)
     );
-  }, []);
-*/
+  }, []); */
+
   useEffect(() => {
     getForecastWeather()
       .then((data) => {
@@ -110,17 +110,17 @@ function App() {
         setTemp(temperature);
       })
       .catch((error) => {
-        console.error("Error fetching weather data: ", error);
+        console.error("Error fetching weather data: ");
       });
   }, []);
 
   useEffect(() => {
     getItemList()
-      .then((data) => {
-        setClothingItems(data);
+      .then((handleServerResponse) => {
+        setClothingItems(handleServerResponse);
       })
       .catch((error) => {
-        console.error("Error fetching item list: ", error);
+        console.error("Error fetching item list: ");
       });
   }, []);
 
@@ -204,6 +204,15 @@ function App() {
             selectedCard={selectedCard}
             onClose={handleCloseModal}
             onDeleteItem={handleDeleteItem}
+          />
+        )}
+        {isDeleteModalOpen && (
+          <DeleteItemModal
+            /*isDeleteModalOpen={handleSelectedCard}*/
+            handleCloseModal={handleCloseDeleteModal}
+            handleDeleteItem={handleDeleteItem}
+            isOpen={isDeleteModalOpen}
+            itemId={selectedCard.id}
           />
         )}
       </CurrentTemperatureUnitContext.Provider>

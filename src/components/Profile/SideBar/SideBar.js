@@ -11,7 +11,7 @@ class SideBar extends React.Component {
           <img src={avatar} alt="avatar" />
         </div>
         <div>
-          <Link to="/profile">Name</Link>
+          <Link to="/profile">Ian Kamar</Link>
         </div>
       </div>
     );

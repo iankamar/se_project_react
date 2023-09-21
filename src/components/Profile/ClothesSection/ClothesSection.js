@@ -1,7 +1,8 @@
 import React from "react";
 import "./ClothesSection.css";
+/*import ItemCard from "../../ItemCard/ItemCard";*/
 
-const ClothesSection = ({ item, onSelectCard, onDeleteCard }) => {
+const ClothesSection = ({ item, /*clothingItems,*/ onSelectCard }) => {
   return (
     <div className="card">
       <img
@@ -12,6 +13,14 @@ const ClothesSection = ({ item, onSelectCard, onDeleteCard }) => {
       />
       <h3 className="card__name"> {item.name} </h3>
     </div>
+    /*
+    <div className="card__name">
+      <div className="card__image">
+        {clothingItems.map((item) => {
+          <ItemCard item={item} onSelectCard={onSelectCard} key={item.id} />;
+        })}
+      </div>
+    </div> */
   );
 };
 

@@ -12,7 +12,7 @@ const ItemCard = ({ item, onSelectCard }) => {
           onClick={() => onSelectCard(item)}
         />
       </div>
-      <h3 className="card_name"> {item.name} </h3>
+      <h3 className="card__name"> {item.name} </h3>
     </div>
   );
 };
