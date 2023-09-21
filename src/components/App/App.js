@@ -123,6 +123,55 @@ function App() {
         console.error("Error fetching item list: ");
       });
   }, []);
+  /*
+  useEffect(() => {
+    const item = {
+      name: "Item Name",
+      link: "Item Link",
+      weather: "Weather Type",
+    };
+
+    addItem(item)
+      .then((data) => {
+        setClothingItems(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching item list: ", error);
+      });
+  }, []);
+
+  useEffect(() => {
+    const id = "id";
+
+    removeItem(id)
+      .then((data) => {
+        setClothingItems(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching item list: ", error);
+      });
+  }, []);
+  
+  useEffect(() => {
+    addItem()
+      .then((data) => {
+        setClothingItems(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching item list: ");
+      });
+  }, []);
+
+  useEffect(() => {
+    removeItem()
+      .then((data) => {
+        setClothingItems(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching item list: ");
+      });
+  }, []);
+*/
 
   useEffect(() => {
     if (!activeModal) return;
@@ -154,23 +203,6 @@ function App() {
     };
   }, []);
 
-  /*
-  useEffect(() => {
-    addItem()
-      .then((data) => {
-        setClothingItems(data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
-  useEffect(() => {
-    removeItem()
-      .then((data) => {
-        setClothingItems(data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-*/
   return (
     <div>
       <CurrentTemperatureUnitContext.Provider

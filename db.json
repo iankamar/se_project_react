@@ -135,6 +135,88 @@
       "name": "Cap",
       "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
       "_id": 14
+    },
+    {
+      "name": "Cap",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
+      "_id": 15
+    },
+    {
+      "name": "Cap",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
+      "_id": 16
+    },
+    {
+      "name": "Item Name",
+      "link": "Item Link",
+      "weatherType": "Weather Type",
+      "_id": 17
+    },
+    {
+      "name": "Item Name",
+      "link": "Item Link",
+      "weatherType": "Weather Type",
+      "_id": 18
+    },
+    {
+      "name": "Item Name",
+      "link": "Item Link",
+      "weatherType": "Weather Type",
+      "_id": 19
+    },
+    {
+      "name": "Item Name",
+      "link": "Item Link",
+      "weatherType": "Weather Type",
+      "_id": 20
+    },
+    {
+      "name": "Item Name",
+      "link": "Item Link",
+      "weatherType": "Weather Type",
+      "_id": 21
+    },
+    {
+      "name": "Item Name",
+      "link": "Item Link",
+      "weatherType": "Weather Type",
+      "_id": 22
+    },
+    {
+      "name": "Item Name",
+      "link": "Item Link",
+      "weatherType": "Weather Type",
+      "_id": 23
+    },
+    {
+      "name": "Item Name",
+      "link": "Item Link",
+      "weatherType": "Weather Type",
+      "_id": 24
+    },
+    {
+      "name": "Item Name",
+      "link": "Item Link",
+      "weatherType": "Weather Type",
+      "_id": 25
+    },
+    {
+      "name": "Item Name",
+      "link": "Item Link",
+      "weatherType": "Weather Type",
+      "_id": 26
+    },
+    {
+      "name": "Item Name",
+      "link": "Item Link",
+      "weatherType": "Weather Type",
+      "_id": 27
+    },
+    {
+      "name": "Item Name",
+      "link": "Item Link",
+      "weatherType": "Weather Type",
+      "_id": 28
     }
   ]
 }
