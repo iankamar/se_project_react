@@ -9,7 +9,7 @@ import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperature
 import { Switch, Route } from "react-router-dom";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
-import ClothesSection from "../Profile/ClothesSection/ClothesSection";
+/*import ClothesSection from "../Profile/ClothesSection/ClothesSection"; */
 import { defaultClothingItems } from "../../utils/Constants";
 import DeleteItemModal from "../DeleteItemModal/DeleteItemModal";
 import { getItemList, addItem, removeItem } from "../../utils/Api";
@@ -61,13 +61,14 @@ function App() {
   };
 
   const handleAddItem = (itemCard) => {
+    console.log(itemCard);
     const item = {
       name: itemCard.name,
       link: itemCard.link,
-      weather: itemCard.weather,
+      weather: itemCard.weatherType,
     };
     addItem(item)
-      .then((item) => {
+      .then((res) => {
         setClothingItems([item, ...clothingItems]);
         handleCloseModal();
       })
@@ -218,9 +219,11 @@ function App() {
             />
           </Route>
           <Route path="/profile">
-            <Profile handleAddClick={setActiveModal}>
-              <ClothesSection clothes={clothingItems} />
-            </Profile>
+            <Profile
+              handleAddClick={setActiveModal}
+              clothingItems={clothingItems}
+              onSelectCard={handleSelectedCard}
+            />
           </Route>
         </Switch>
         <Footer className="profile__footer" />

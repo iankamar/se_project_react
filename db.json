@@ -217,6 +217,29 @@
       "link": "Item Link",
       "weatherType": "Weather Type",
       "_id": 28
+    },
+    {
+      "name": "Coat",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
+      "_id": 29
+    },
+    {
+      "name": "Coat",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
+      "weatherType": "cold",
+      "_id": 30
+    },
+    {
+      "name": "Coat",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
+      "weatherType": "hot",
+      "_id": 31
+    },
+    {
+      "name": "Coat",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
+      "weatherType": "warm",
+      "_id": 32
     }
   ]
 }

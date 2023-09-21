@@ -3,10 +3,12 @@ import { defaultClothingItems } from "../../utils/Constants";
 import "./Profile.css";
 import ItemModal from "../ItemModal/ItemModal";
 import SideBar from "./SideBar/SideBar";
-import ClothesSection from "./ClothesSection/ClothesSection";
-import AddItemModal from "../AddItemModal/AddItemModal";
+/*import ClothesSection from "./ClothesSection/ClothesSection"; */
+/*import AddItemModal from "../AddItemModal/AddItemModal";*/
+import ItemCard from "../ItemCard/ItemCard";
 
-const Profile = ({ handleAddClick }) => {
+const Profile = ({ handleAddClick, onSelectCard, clothingItems }) => {
+  /*
   const [selectedCard, setSelectedCard] = useState(null);
   const [addItemModalOpen, setAddItemModalOpen] = useState(false);
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
@@ -38,7 +40,7 @@ const Profile = ({ handleAddClick }) => {
       prevItems.filter((item) => item._id !== id)
     );
   };
-
+*/
   return (
     <div className="profile">
       <div className="profile__content">
@@ -62,22 +64,15 @@ const Profile = ({ handleAddClick }) => {
             {/* Sidebar content goes here */}
           </div>
           <div className="profile__itemsCard">
-            {defaultClothingItems.map((item) => (
-              <ClothesSection
+            {clothingItems.map((item) => (
+              <ItemCard
                 key={item._id}
                 item={item}
-                onSelectCard={() => onSelectCard(item)}
+                onSelectCard={onSelectCard}
               />
             ))}
           </div>
         </div>
-        {selectedCard && (
-          <ItemModal
-            selectedCard={selectedCard}
-            onClose={onClose}
-            handleDeleteItem={() => handleDeleteItem(selectedCard._id)}
-          />
-        )}
       </div>
     </div>
   );
