@@ -90,6 +90,51 @@
       "name": "Winter coat",
       "weather": "cold",
       "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4"
+    },
+    {
+      "name": "Cap",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
+      "_id": 6
+    },
+    {
+      "name": "Cap",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
+      "_id": 7
+    },
+    {
+      "name": "Cap",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
+      "_id": 8
+    },
+    {
+      "name": "Cap",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
+      "_id": 9
+    },
+    {
+      "name": "Cap",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
+      "_id": 10
+    },
+    {
+      "name": "Cap",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
+      "_id": 11
+    },
+    {
+      "name": "Cap",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
+      "_id": 12
+    },
+    {
+      "name": "Cap",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
+      "_id": 13
+    },
+    {
+      "name": "Cap",
+      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
+      "_id": 14
     }
   ]
 }

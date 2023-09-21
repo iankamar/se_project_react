@@ -40,7 +40,8 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
   }, [temp, currentTemperatureUnit]);
 
   const filteredCards = clothingItems.filter((item) => {
-    return item.weather.toLowerCase() === weatherType;
+    /*return item.weather.toLowerCase() === weatherType;*/
+    return item.weather ? item.weather.toLowerCase() === weatherType : false;
   });
 
   return (
