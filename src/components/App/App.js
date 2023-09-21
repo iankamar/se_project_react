@@ -21,16 +21,16 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  /*const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);*/
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
 
-  const handleOpenDeleteModal = () => {
+  /*const handleOpenDeleteModal = () => {
     setIsDeleteModalOpen(true);
   };
 
   const handleCloseDeleteModal = () => {
     setIsDeleteModalOpen(false);
-  };
+  };*/
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -47,10 +47,10 @@ function App() {
 
   const handleDeleteItem = (itemCard) => {
     removeItem(itemCard.id)
-      .then((data) => {
+      .then((itemCard) => {
         const deleteId = itemCard.id;
-        const updateItems = clothingItems.filter((id) => {
-          return id.id !== deleteId;
+        const updateItems = clothingItems.filter((itemCard) => {
+          return itemCard.id !== deleteId;
         });
         setClothingItems(updateItems);
         handleCloseModal();
@@ -61,18 +61,18 @@ function App() {
   };
 
   const handleAddItem = (itemCard) => {
-    const id = {
+    const item = {
       name: itemCard.name,
       link: itemCard.link,
       weather: itemCard.weather,
     };
-    addItem(id)
-      .then((id) => {
-        setClothingItems([id, ...clothingItems]);
+    addItem(item)
+      .then((item) => {
+        setClothingItems([item, ...clothingItems]);
         handleCloseModal();
       })
       .catch((error) => {
-        console.error("Error fetching id: ");
+        console.error("Error fetching item list: ");
       });
   };
 
@@ -116,8 +116,8 @@ function App() {
 
   useEffect(() => {
     getItemList()
-      .then((handleServerResponse) => {
-        setClothingItems(handleServerResponse);
+      .then((data) => {
+        setClothingItems(data);
       })
       .catch((error) => {
         console.error("Error fetching item list: ");
@@ -204,15 +204,6 @@ function App() {
             selectedCard={selectedCard}
             onClose={handleCloseModal}
             onDeleteItem={handleDeleteItem}
-          />
-        )}
-        {isDeleteModalOpen && (
-          <DeleteItemModal
-            /*isDeleteModalOpen={handleSelectedCard}*/
-            handleCloseModal={handleCloseDeleteModal}
-            handleDeleteItem={handleDeleteItem}
-            isOpen={isDeleteModalOpen}
-            itemId={selectedCard.id}
           />
         )}
       </CurrentTemperatureUnitContext.Provider>

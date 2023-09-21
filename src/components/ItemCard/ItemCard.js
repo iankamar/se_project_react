@@ -8,11 +8,11 @@ const ItemCard = ({ item, onSelectCard }) => {
         <img
           src={item.link}
           alt={item.name}
-          className="card__image"
+          className="card_image"
           onClick={() => onSelectCard(item)}
         />
       </div>
-      <h3 className="card__name"> {item.name} </h3>
+      <h3 className="card_name"> {item.name} </h3>
     </div>
   );
 };

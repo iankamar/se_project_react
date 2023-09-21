@@ -13,16 +13,16 @@ export const getItemList = () => {
   }).then(handleServerResponse);
 };
 
-export const addItem = (id) => {
+export const addItem = (item) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      name: id.name,
-      link: id.link,
-      weatherType: id.weather,
+      name: item.name,
+      link: item.link,
+      weatherType: item.weather,
     }),
   }).then(handleServerResponse);
 };
