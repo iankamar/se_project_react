@@ -11,7 +11,7 @@ import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
 /*import ClothesSection from "../Profile/ClothesSection/ClothesSection"; */
 import { defaultClothingItems } from "../../utils/Constants";
-import DeleteItemModal from "../DeleteItemModal/DeleteItemModal";
+/*import DeleteItemModal from "../DeleteItemModal/DeleteItemModal";*/
 import { getItemList, addItem, removeItem } from "../../utils/Api";
 import "./App.css";
 /*import { Link } from "react-router-dom/cjs/react-router-dom.min";*/
