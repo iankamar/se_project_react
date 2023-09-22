@@ -9,7 +9,7 @@ import { Switch, Route } from "react-router-dom";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
 import { defaultClothingItems } from "../../utils/Constants";
-import { getItemList, addItem, removeItem } from "../../utils/Api";
+import { getItemList, addItem, removeItem } from "../../utils/api";
 import "./App.css";
 
 function App() {
