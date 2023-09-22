@@ -6,7 +6,6 @@ const ModalWithForm = ({
   title,
   onClose,
   name,
-  isOpen,
   onSubmit,
 }) => {
   return (

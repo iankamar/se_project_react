@@ -1,46 +1,9 @@
-import React, { useState } from "react";
-import { defaultClothingItems } from "../../utils/Constants";
+import React from "react";
 import "./Profile.css";
-import ItemModal from "../ItemModal/ItemModal";
 import SideBar from "./SideBar/SideBar";
-/*import ClothesSection from "./ClothesSection/ClothesSection"; */
-/*import AddItemModal from "../AddItemModal/AddItemModal";*/
-import ItemCard from "../ItemCard/ItemCard";
+import ClothesSection from "./ClothesSection/ClothesSection";
 
 const Profile = ({ handleAddClick, onSelectCard, clothingItems }) => {
-  /*
-  const [selectedCard, setSelectedCard] = useState(null);
-  const [addItemModalOpen, setAddItemModalOpen] = useState(false);
-  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
-
-  const onSelectCard = (item) => {
-    setSelectedCard(item);
-  };
-
-  const onClose = () => {
-    setSelectedCard(null);
-  };
-
-  const handleAddItem = (newItem) => {
-    console.log(newItem);
-    newItem.preventDefault();
-    setClothingItems((prevItems) => [...prevItems, newItem]);
-  };
-
-  const handleOpenAddItemModal = () => {
-    setAddItemModalOpen(true);
-  };
-
-  const handleCloseAddItemModal = () => {
-    setAddItemModalOpen(false);
-  };
-
-  const handleDeleteItem = (id) => {
-    setClothingItems((prevItems) =>
-      prevItems.filter((item) => item._id !== id)
-    );
-  };
-*/
   return (
     <div className="profile">
       <div className="profile__content">
@@ -63,15 +26,10 @@ const Profile = ({ handleAddClick, onSelectCard, clothingItems }) => {
           <div className="profile__sidebar">
             {/* Sidebar content goes here */}
           </div>
-          <div className="profile__itemsCard">
-            {clothingItems.map((item) => (
-              <ItemCard
-                key={item._id}
-                item={item}
-                onSelectCard={onSelectCard}
-              />
-            ))}
-          </div>
+          <ClothesSection
+            clothingItems={clothingItems}
+            onSelectCard={onSelectCard}
+          />
         </div>
       </div>
     </div>

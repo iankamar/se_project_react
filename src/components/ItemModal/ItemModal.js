@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import DeleteItemModal from "../DeleteItemModal/DeleteItemModal";
+import React from "react";
 
 const ItemModal = ({ selectedCard, onClose, handleOpenDeleteModal }) => {
   const handleClick = () => {

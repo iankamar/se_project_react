@@ -7,7 +7,7 @@ import "./Header.css";
 import { getForecastWeather } from "../../utils/weatherAPi";
 
 const Header = ({ onCreateModal }) => {
-  const [date, setDate] = useState(new Date());
+  const [date] = useState(new Date());
   const [cityName, setCityName] = useState("");
 
   useEffect(() => {

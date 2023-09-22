@@ -31,7 +31,7 @@
   display: flex;
   justify-content: flex-start;
 }
-
+/*
 .profile__itemsCard {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -39,7 +39,7 @@
   width: 60%;
   float: right;
   gap: 20px;
-}
+}*/
 
 .profile__sidebar {
   display: flex;
