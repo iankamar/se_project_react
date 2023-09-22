@@ -31,6 +31,7 @@ function App() {
   const handleCloseDeleteModal = () => {
     setIsDeleteModalOpen(false);
   };*/
+  // Inside your App component
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -45,18 +46,18 @@ function App() {
     setSelectedCard(card);
   };
 
-  const handleDeleteItem = (itemCard) => {
-    removeItem(itemCard.id)
-      .then((itemCard) => {
-        const deleteId = itemCard.id;
-        const updateItems = clothingItems.filter((itemCard) => {
-          return itemCard.id !== deleteId;
+  const handleDeleteItem = (selectedCard) => {
+    removeItem(selectedCard._id)
+      .then((res) => {
+        const deleteId = selectedCard._id;
+        const updateItems = clothingItems.filter((item) => {
+          return item._id !== deleteId;
         });
         setClothingItems(updateItems);
         handleCloseModal();
       })
       .catch((err) => {
-        console.log(err);
+        console.error("Error deleting item:", err);
       });
   };
 
@@ -238,7 +239,7 @@ function App() {
           <ItemModal
             selectedCard={selectedCard}
             onClose={handleCloseModal}
-            onDeleteItem={handleDeleteItem}
+            handleOpenDeleteModal={handleDeleteItem}
           />
         )}
       </CurrentTemperatureUnitContext.Provider>
@@ -258,4 +259,25 @@ export default App; /*
             itemId={selectedCard.id}
           />
         )}
+
+
+
+{activeModal === "delete" && (
+  <DeleteItemModal
+    onClose={handleCloseModal}
+    handleDeleteItem={handleDeleteItem}
+    selectedCard={selectedCard}
+  />
+)} 
+
+
+
+   {activeModal === "" && (
+          <DeleteItemModal
+            onClose={handleCloseModal}
+            handleDeleteItem={handleDeleteItem}
+            selectedCard={selectedCard}
+          />
+        )}
+
 */

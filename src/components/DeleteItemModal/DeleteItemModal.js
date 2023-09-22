@@ -8,10 +8,11 @@ const DeleteItemModal = ({
   handleDeleteItem,
   isOpen,
   itemId,
+  selectedCard,
 }) => {
-  console.log(handleDeleteItem);
-  const handleSubmit = () => {
-    handleDeleteItem();
+  const handleSubmit = (selectedCard) => {
+    handleDeleteItem(selectedCard);
+    handleCloseModal(selectedCard);
   };
 
   return (

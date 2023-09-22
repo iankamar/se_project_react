@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import DeleteItemModal from "../DeleteItemModal/DeleteItemModal";
 
 const ItemModal = ({ selectedCard, onClose, handleOpenDeleteModal }) => {
+  const handleClick = () => {
+    handleOpenDeleteModal(selectedCard);
+  };
+
   return (
     <div className={`modal`}>
       <div className="modal__content">
@@ -14,7 +18,7 @@ const ItemModal = ({ selectedCard, onClose, handleOpenDeleteModal }) => {
           <button
             type="button"
             className="modal__deleteItem"
-            onClick={handleOpenDeleteModal}
+            onClick={handleClick}
           >
             Delete item
           </button>

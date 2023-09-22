@@ -56,12 +56,6 @@
   ],
   "items": [
     {
-      "_id": 0,
-      "name": "Cap",
-      "weather": "hot",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591"
-    },
-    {
       "_id": 1,
       "name": "Hoodie",
       "weather": "warm",
@@ -86,160 +80,10 @@
       "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
     },
     {
-      "_id": 5,
-      "name": "Winter coat",
-      "weather": "cold",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4"
-    },
-    {
-      "name": "Cap",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
-      "_id": 6
-    },
-    {
-      "name": "Cap",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
-      "_id": 7
-    },
-    {
-      "name": "Cap",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
-      "_id": 8
-    },
-    {
-      "name": "Cap",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
-      "_id": 9
-    },
-    {
-      "name": "Cap",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
-      "_id": 10
-    },
-    {
-      "name": "Cap",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
-      "_id": 11
-    },
-    {
-      "name": "Cap",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
-      "_id": 12
-    },
-    {
-      "name": "Cap",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
-      "_id": 13
-    },
-    {
-      "name": "Cap",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
-      "_id": 14
-    },
-    {
-      "name": "Cap",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
-      "_id": 15
-    },
-    {
-      "name": "Cap",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Cap.png?etag=f3dad389b22909cafa73cff9f9a3d591",
-      "_id": 16
-    },
-    {
-      "name": "Item Name",
-      "link": "Item Link",
-      "weatherType": "Weather Type",
-      "_id": 17
-    },
-    {
-      "name": "Item Name",
-      "link": "Item Link",
-      "weatherType": "Weather Type",
-      "_id": 18
-    },
-    {
-      "name": "Item Name",
-      "link": "Item Link",
-      "weatherType": "Weather Type",
-      "_id": 19
-    },
-    {
-      "name": "Item Name",
-      "link": "Item Link",
-      "weatherType": "Weather Type",
-      "_id": 20
-    },
-    {
-      "name": "Item Name",
-      "link": "Item Link",
-      "weatherType": "Weather Type",
-      "_id": 21
-    },
-    {
-      "name": "Item Name",
-      "link": "Item Link",
-      "weatherType": "Weather Type",
-      "_id": 22
-    },
-    {
-      "name": "Item Name",
-      "link": "Item Link",
-      "weatherType": "Weather Type",
-      "_id": 23
-    },
-    {
-      "name": "Item Name",
-      "link": "Item Link",
-      "weatherType": "Weather Type",
-      "_id": 24
-    },
-    {
-      "name": "Item Name",
-      "link": "Item Link",
-      "weatherType": "Weather Type",
-      "_id": 25
-    },
-    {
-      "name": "Item Name",
-      "link": "Item Link",
-      "weatherType": "Weather Type",
-      "_id": 26
-    },
-    {
-      "name": "Item Name",
-      "link": "Item Link",
-      "weatherType": "Weather Type",
-      "_id": 27
-    },
-    {
-      "name": "Item Name",
-      "link": "Item Link",
-      "weatherType": "Weather Type",
-      "_id": 28
-    },
-    {
-      "name": "Coat",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
-      "_id": 29
-    },
-    {
       "name": "Coat",
       "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
       "weatherType": "cold",
       "_id": 30
-    },
-    {
-      "name": "Coat",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
-      "weatherType": "hot",
-      "_id": 31
-    },
-    {
-      "name": "Coat",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
-      "weatherType": "warm",
-      "_id": 32
     }
   ]
 }
