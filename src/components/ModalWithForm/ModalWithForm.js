@@ -10,7 +10,7 @@ const ModalWithForm = ({
   onSubmit,
   closeModal,
 }) => {
-  UseEscape(onClose);
+  UseEscape(closeModal);
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal__content">
