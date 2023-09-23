@@ -1,5 +1,5 @@
 import "./ModalWithForm.css";
-import { useEscape } from "../UseEscape/usEscape";
+import { useEscape } from "../UseEscape/UseEscape";
 
 const ModalWithForm = ({
   children,
