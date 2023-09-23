@@ -1,18 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import logo from "../../images/logo.svg";
 import avatar from "../../images/avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import { getForecastWeather } from "../../utils/weatherAPi";
 
-const Header = ({ onCreateModal }) => {
+const Header = ({ onCreateModal, cityName }) => {
   const [date] = useState(new Date());
-  const [cityName, setCityName] = useState("");
-
-  useEffect(() => {
-    getForecastWeather().then(({ cityName }) => setCityName(cityName));
-  }, []);
 
   return (
     <header className="header">

@@ -18,6 +18,8 @@ function App() {
   const [temp, setTemp] = useState(0);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+  const [cityName, setCityName] = useState("");
+  /*const [isLoading, setIsLoading] = React.useState(false);*/
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -85,6 +87,7 @@ function App() {
       .then((data) => {
         const temperature = parseWeatherData(data);
         setTemp(temperature);
+        setCityName(data.cityName);
       })
       .catch((error) => {
         console.error("Error fetching weather data: ");
@@ -115,6 +118,7 @@ function App() {
   }, [activeModal]);
 
   useEffect(() => {
+    if (!activeModal) return;
     const handleClickClose = (e) => {
       if (
         e.target.classList.contains("item_modal") ||
@@ -129,47 +133,49 @@ function App() {
     return () => {
       document.removeEventListener("click", handleClickClose);
     };
-  }, []);
+  }, [activeModal]);
 
   return (
-    <div>
-      <CurrentTemperatureUnitContext.Provider
-        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
-      >
-        <Header onCreateModal={handleCreateModal} temp={temp} />
-        <Switch>
-          <Route exact path="/">
-            <Main
-              weatherTemp={temp}
-              onSelectCard={handleSelectedCard}
-              clothingItems={clothingItems}
-            />
-          </Route>
-          <Route path="/profile">
-            <Profile
-              handleAddClick={setActiveModal}
-              clothingItems={clothingItems}
-              onSelectCard={handleSelectedCard}
-            />
-          </Route>
-        </Switch>
-        <Footer className="profile__footer" />
-        {activeModal === "create" && (
-          <AddItemModal
-            handleCloseModal={handleCloseModal}
-            isOpen={activeModal === "create"}
-            onAddItem={handleAddItem}
+    <CurrentTemperatureUnitContext.Provider
+      value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+    >
+      <Header
+        onCreateModal={handleCreateModal}
+        temp={temp}
+        cityName={cityName}
+      />
+      <Switch>
+        <Route exact path="/">
+          <Main
+            weatherTemp={temp}
+            onSelectCard={handleSelectedCard}
+            clothingItems={clothingItems}
           />
-        )}
-        {activeModal === "preview" && (
-          <ItemModal
-            selectedCard={selectedCard}
-            onClose={handleCloseModal}
-            handleOpenDeleteModal={handleDeleteItem}
+        </Route>
+        <Route path="/profile">
+          <Profile
+            handleAddClick={setActiveModal}
+            clothingItems={clothingItems}
+            onSelectCard={handleSelectedCard}
           />
-        )}
-      </CurrentTemperatureUnitContext.Provider>
-    </div>
+        </Route>
+      </Switch>
+      <Footer className="profile__footer" />
+      {activeModal === "create" && (
+        <AddItemModal
+          handleCloseModal={handleCloseModal}
+          isOpen={activeModal === "create"}
+          onAddItem={handleAddItem}
+        />
+      )}
+      {activeModal === "preview" && (
+        <ItemModal
+          selectedCard={selectedCard}
+          onClose={handleCloseModal}
+          handleOpenDeleteModal={handleDeleteItem}
+        />
+      )}
+    </CurrentTemperatureUnitContext.Provider>
   );
 }
 

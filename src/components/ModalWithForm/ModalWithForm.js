@@ -1,4 +1,5 @@
 import "./ModalWithForm.css";
+import { useEscape } from "../UseEscape/usEscape";
 
 const ModalWithForm = ({
   children,
@@ -7,7 +8,9 @@ const ModalWithForm = ({
   onClose,
   name,
   onSubmit,
+  closeModal,
 }) => {
+  useEscape(closeModal);
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal__content">
@@ -20,6 +23,9 @@ const ModalWithForm = ({
         <div className="modal__fieldset">
           <form className="modal__form" onSubmit={onSubmit}>
             {children}
+            <button type="submit" className="modal__save">
+              Add Garment
+            </button>
           </form>
         </div>
       </div>

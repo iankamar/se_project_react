@@ -1,5 +1,7 @@
 // https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}//
 
+import { handleServerResponse } from "../utils/api";
+
 const latitude = 38.93;
 const longitude = -77.18;
 const APIkey = "37fd47fdc6ac7caa0dde7c4c82f0be18";
@@ -8,13 +10,7 @@ export const getForecastWeather = () => {
   const weatherApi = fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`
   )
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      } else {
-        return Promise.reject(`Error: ${res.status}`);
-      }
-    })
+    .then(handleServerResponse)
     .then((data) => {
       const cityName = data.name;
       data.cityName = cityName;
