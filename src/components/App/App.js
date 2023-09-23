@@ -49,7 +49,7 @@ function App() {
       })
       .finally(() => setIsLoading(false));
   };
-
+  /*
   const handleAddItem = (itemCard) => {
     console.log(itemCard);
     const item = {
@@ -68,7 +68,38 @@ function App() {
         console.error("Error fetching item list: ");
       })
       .finally(() => setIsLoading(false));
+  };*/
+
+  const handleAddItem = (itemCard) => {
+    console.log(itemCard);
+    const itemRequest = () => {
+      const item = {
+        name: itemCard.name,
+        link: itemCard.link,
+        weather: itemCard.weatherType,
+      };
+      return addItem(item);
+    };
+    setIsLoading(true);
+    handleSubmit(itemRequest);
   };
+  /*buttonText={isLoading ? "Saving..." : "Save"} */
+
+  function handleSubmit(request) {
+    setIsLoading(true);
+
+    request()
+      .then((res) => {
+        setClothingItems([res, ...clothingItems]);
+        handleCloseModal();
+      })
+      .catch((error) => {
+        console.error("Error fetching item list:", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }
 
   const handleToggleSwitchChange = () => {
     currentTemperatureUnit === "F"
