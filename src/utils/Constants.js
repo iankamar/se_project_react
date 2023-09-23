@@ -19,13 +19,13 @@ export const weatherOptions = [
     url: cloudyDay,
     day: true,
     type: "cloudy",
-    tempRange: "warm",
+    tempRange: "cold",
   },
   {
     url: rain,
     day: true,
     type: "rain",
-    tempRange: "cold",
+    tempRange: "warm",
   },
   {
     url: storm,
@@ -53,13 +53,13 @@ export const weatherOptions = [
     url: cloudy,
     day: false,
     type: "cloudy",
-    tempRange: "warm",
+    tempRange: "cold",
   },
   {
     url: rain,
     day: false,
     type: "rain",
-    tempRange: "cold",
+    tempRange: "warm",
   },
   {
     url: storm,
