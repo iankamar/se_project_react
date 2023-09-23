@@ -19,7 +19,7 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   const [cityName, setCityName] = useState("");
-  /*const [isLoading, setIsLoading] = React.useState(false);*/
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -46,18 +46,9 @@ function App() {
       })
       .catch((err) => {
         console.error("Error deleting item:", err);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
-  /*
-  const removeItem = async (id) => {
-    const response = await fetch(`/api/items/${id}`, { method: "DELETE" });
-
-    if (response.ok) {
-      setItems(items.filter((item) => item.id !== id));
-    } else {
-      console.error("Error deleting item:", response.statusText);
-    }
-  };*/
 
   const handleAddItem = (itemCard) => {
     console.log(itemCard);
@@ -66,6 +57,8 @@ function App() {
       link: itemCard.link,
       weather: itemCard.weatherType,
     };
+    setIsLoading(true);
+
     addItem(item)
       .then((res) => {
         setClothingItems([item, ...clothingItems]);
@@ -73,7 +66,8 @@ function App() {
       })
       .catch((error) => {
         console.error("Error fetching item list: ");
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const handleToggleSwitchChange = () => {

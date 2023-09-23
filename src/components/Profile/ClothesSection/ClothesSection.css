@@ -23,8 +23,8 @@
 .profile__itemsCard {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  /*grid-template-rows: repeat(2, 1fr);
   width: 60%;
-  float: right;
+  float: right;*/
   gap: 20px;
 }
