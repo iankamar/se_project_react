@@ -5,8 +5,8 @@ import ItemCard from "../../ItemCard/ItemCard";
 const ClothesSection = ({ clothingItems, onSelectCard }) => {
   return (
     <div className="profile__itemsCard">
-      {clothingItems.map((item) => (
-        <ItemCard key={item._id} item={item} onSelectCard={onSelectCard} />
+      {clothingItems.map((item, index) => (
+        <ItemCard key={index} item={item} onSelectCard={onSelectCard} />
       ))}
     </div>
   );
