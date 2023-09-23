@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const useEscape = (closeModal) => {
+export function UseEscape(closeModal) {
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape") {
@@ -13,6 +13,4 @@ const useEscape = (closeModal) => {
       document.removeEventListener("keydown", handleEscape);
     };
   }, [closeModal]);
-};
-
-export { useEscape };
+}
