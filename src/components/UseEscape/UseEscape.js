@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 export function UseEscape(closeModal) {
   useEffect(() => {
@@ -13,4 +13,5 @@ export function UseEscape(closeModal) {
       document.removeEventListener("keydown", handleEscape);
     };
   }, [closeModal]);
+  return <div>Press ESC to close modal</div>;
 }

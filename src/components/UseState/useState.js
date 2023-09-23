@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export function UseForm(initialValues) {
   const [name, setName] = useState(initialValues);
@@ -12,4 +12,21 @@ export function UseForm(initialValues) {
   };
 
   return { name, handleChange, setName };
+}
+
+export function FormComponent() {
+  const initialValues = { name: "" };
+  const { values, handleChange } = UseForm(initialValues);
+
+  return (
+    <form>
+      <input
+        type="text"
+        name="name"
+        value={values.name}
+        onChange={handleChange}
+        placeholder="Name"
+      />
+    </form>
+  );
 }
