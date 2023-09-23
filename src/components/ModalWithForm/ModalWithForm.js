@@ -1,5 +1,4 @@
 import "./ModalWithForm.css";
-import { UseEscape } from "../UseEscape/UseEscape";
 
 const ModalWithForm = ({
   children,
@@ -10,7 +9,6 @@ const ModalWithForm = ({
   onSubmit,
   closeModal,
 }) => {
-  UseEscape(closeModal);
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal__content">

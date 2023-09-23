@@ -18,8 +18,6 @@ function App() {
   const [temp, setTemp] = useState(0);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
-  const [cityName, setCityName] = useState("");
-  const [isLoading, setIsLoading] = React.useState(false);
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -46,10 +44,9 @@ function App() {
       })
       .catch((err) => {
         console.error("Error deleting item:", err);
-      })
-      .finally(() => setIsLoading(false));
+      });
   };
-  /*
+
   const handleAddItem = (itemCard) => {
     console.log(itemCard);
     const item = {
@@ -57,8 +54,6 @@ function App() {
       link: itemCard.link,
       weather: itemCard.weatherType,
     };
-    setIsLoading(true);
-
     addItem(item)
       .then((res) => {
         setClothingItems([item, ...clothingItems]);
@@ -66,40 +61,8 @@ function App() {
       })
       .catch((error) => {
         console.error("Error fetching item list: ");
-      })
-      .finally(() => setIsLoading(false));
-  };*/
-
-  const handleAddItem = (itemCard) => {
-    console.log(itemCard);
-    const itemRequest = () => {
-      const item = {
-        name: itemCard.name,
-        link: itemCard.link,
-        weather: itemCard.weatherType,
-      };
-      return addItem(item);
-    };
-    setIsLoading(true);
-    handleSubmit(itemRequest);
-  };
-  /*buttonText={isLoading ? "Saving..." : "Save"} */
-
-  function handleSubmit(request) {
-    setIsLoading(true);
-
-    request()
-      .then((res) => {
-        setClothingItems([res, ...clothingItems]);
-        handleCloseModal();
-      })
-      .catch((error) => {
-        console.error("Error fetching item list:", error);
-      })
-      .finally(() => {
-        setIsLoading(false);
       });
-  }
+  };
 
   const handleToggleSwitchChange = () => {
     currentTemperatureUnit === "F"
@@ -112,7 +75,6 @@ function App() {
       .then((data) => {
         const temperature = parseWeatherData(data);
         setTemp(temperature);
-        setCityName(data.cityName);
       })
       .catch((error) => {
         console.error("Error fetching weather data: ");
@@ -164,11 +126,7 @@ function App() {
     <CurrentTemperatureUnitContext.Provider
       value={{ currentTemperatureUnit, handleToggleSwitchChange }}
     >
-      <Header
-        onCreateModal={handleCreateModal}
-        temp={temp}
-        cityName={cityName}
-      />
+      <Header onCreateModal={handleCreateModal} temp={temp} />
       <Switch>
         <Route exact path="/">
           <Main
