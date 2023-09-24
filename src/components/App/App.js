@@ -19,6 +19,7 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   const [cityName, setCityName] = useState("");
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -37,33 +38,56 @@ function App() {
     removeItem(selectedCard._id)
       .then((res) => {
         const deleteId = selectedCard._id;
+
         const updateItems = clothingItems.filter((item) => {
           return item._id !== deleteId;
         });
+
         setClothingItems(updateItems);
+
         handleCloseModal();
       })
+
       .catch((err) => {
         console.error("Error deleting item:", err);
-      });
+      })
+
+      .finally(() => setIsLoading(false));
   };
 
   const handleAddItem = (itemCard) => {
     console.log(itemCard);
-    const item = {
-      name: itemCard.name,
-      link: itemCard.link,
-      weather: itemCard.weatherType,
-    };
-    addItem(item)
-      .then((res) => {
+
+    const handleItemRequest = () => {
+      const item = {
+        name: itemCard.name,
+
+        link: itemCard.link,
+
+        weather: itemCard.weatherType,
+      };
+
+      return addItem(item).then((item) => {
         setClothingItems([item, ...clothingItems]);
-        handleCloseModal();
-      })
-      .catch((error) => {
-        console.error("Error fetching item list: ");
+        handleCloseModal(item);
       });
+    };
+
+    handleSubmit(handleItemRequest);
   };
+
+  /*buttonText={isLoading ? "Saving..." : "Save"} */
+
+  function handleSubmit(request) {
+    setIsLoading(true);
+
+    request()
+      .then(handleCloseModal)
+      .catch(console.error)
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }
 
   const handleToggleSwitchChange = () => {
     currentTemperatureUnit === "F"
