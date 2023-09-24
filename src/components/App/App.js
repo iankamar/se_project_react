@@ -50,9 +50,7 @@ function App() {
 
       .catch((err) => {
         console.error("Error deleting item:", err);
-      })
-
-      .finally(() => setIsLoading(false));
+      });
   };
 
   const handleAddItem = (itemCard) => {
@@ -69,7 +67,6 @@ function App() {
 
       return addItem(item).then((item) => {
         setClothingItems([item, ...clothingItems]);
-        handleCloseModal(item);
       });
     };
 
