@@ -156,6 +156,12 @@
       "name": "T-Shirt",
       "weather": "hot",
       "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
+    },
+    {
+      "name": "Eyeglasses",
+      "link": "https://images.unsplash.com/photo-1631486676757-4f5ade178282?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2186&q=80",
+      "weather": "warm",
+      "_id": 19
     }
   ]
 }

@@ -26,7 +26,7 @@ export const addItem = (item) => {
     body: JSON.stringify({
       name: item.name,
       link: item.link,
-      weatherType: item.weather,
+      weather: item.weather,
     }),
   });
 };
