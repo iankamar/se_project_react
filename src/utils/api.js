@@ -39,3 +39,47 @@ export const removeItem = (id) => {
     },
   });
 };
+
+export const updateUser = (id, name, avatar) => {
+  return request(`${baseUrl}/users/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+    body: JSON.stringify({
+      name,
+      avatar,
+    }),
+  });
+};
+
+export const register = async ({ name, avatar, email, password }) => {
+  return request(`${baseUrl}/signup`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name, avatar, email, password }),
+  });
+};
+
+export const login = async ({ email, password }) => {
+  return request(`${baseUrl}/signin`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, password }),
+  });
+};
+
+export const checkToken = async (token) => {
+  return request(`${baseUrl}/checkToken`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
