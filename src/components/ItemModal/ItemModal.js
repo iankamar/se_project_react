@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import "./ItemModal.css";
 
@@ -35,15 +36,19 @@ const ItemModal = ({ selectedCard, onClose, handleOpenDeleteModal }) => {
 };
 
 export default ItemModal;
+*/
 
-/*
 import React, { useContext } from "react";
 import { CurrentUserContext } from "../Contexts/CurrentUserContext";
 import "./ItemModal.css";
 
 const ItemModal = ({ selectedCard, onClose, handleOpenDeleteModal }) => {
   const currentUser = useContext(CurrentUserContext);
-  const isOwn = selectedCard.owner._id === currentUser._id;
+  const isOwn =
+    selectedCard &&
+    selectedCard.owner &&
+    selectedCard.owner._id === currentUser._id;
+
   const itemDeleteButton = `modal__deleteItem ${
     isOwn ? "modal__deleteItem_visible" : "modal__deleteItem_hidden"
   }`;
@@ -81,4 +86,3 @@ const ItemModal = ({ selectedCard, onClose, handleOpenDeleteModal }) => {
 };
 
 export default ItemModal;
-*/
