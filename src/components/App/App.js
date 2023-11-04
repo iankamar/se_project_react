@@ -1,3 +1,4 @@
+/*
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
@@ -72,9 +73,9 @@ function App() {
 
     handleSubmit(handleItemRequest);
   };
-
-  /*buttonText={isLoading ? "Saving..." : "Save"} */
-
+*/
+/*buttonText={isLoading ? "Saving..." : "Save"} */
+/*
   function handleSubmit(request) {
     setIsLoading(true);
 
@@ -190,14 +191,14 @@ function App() {
 }
 
 export default App;
+*/
 
-/*
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ItemModal from "../ItemModal/ItemModal";
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, /* Route, Redirect } from "react-router-dom";
+import { BrowserRouter as /*Router,*/ Route, Redirect } from "react-router-dom";
 import { getForecastWeather, parseWeatherData } from "../../utils/weatherAPi";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import RegisterModal from "../RegisterModal/RegisterModal";
@@ -281,7 +282,7 @@ function App() {
   };
 
   /*buttonText={isLoading ? "Saving..." : "Save"} */
-/*
+
   const handleSubmit = (request) => {
     setIsLoading(true);
 
@@ -479,4 +480,3 @@ const PrivateRoute = ({ children, isAuthenticated, ...rest }) => {
 };
 
 export default App;
-*/

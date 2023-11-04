@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import "./ItemCard.css";
 
@@ -18,13 +19,15 @@ const ItemCard = ({ item, onSelectCard }) => {
 };
 
 export default ItemCard;
+*/
 
-/*
 import React from "react";
 import "./ItemCard.css";
 
 const ItemCard = ({ item, onSelectCard, onCardLike, currentUser }) => {
-  const isLiked = item.likes.some((id) => id === currentUser._id);
+  const isLiked = item.likes
+    ? item.likes.some((id) => id === currentUser._id)
+    : false;
 
   const itemLikeButton = isLiked ? "liked" : "not-liked";
 
@@ -55,4 +58,3 @@ const ItemCard = ({ item, onSelectCard, onCardLike, currentUser }) => {
 };
 
 export default ItemCard;
-*/

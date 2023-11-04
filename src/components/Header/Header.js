@@ -1,3 +1,4 @@
+/*
 import React, { useState } from "react";
 import logo from "../../images/logo.svg";
 import avatar from "../../images/avatar.svg";
@@ -39,11 +40,11 @@ const Header = ({ onCreateModal, cityName }) => {
 };
 
 export default Header;
+*/
 
-/*
 import React, { useState, useContext } from "react";
 import logo from "../../images/logo.svg";
-// import avatar from "../../images/avatar.svg";
+import avatar from "../../images/avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
 import { CurrentUserContext } from "../Contexts/CurrentUserContext";
@@ -74,13 +75,13 @@ const Header = ({ onCreateModal, cityName }) => {
             + Add New Clothes
           </button>
         </div>
-        <Link to="/profile">{currentUser && currentUser.name}</Link>
+        <Link to="/profile">{currentUser?.name}Ian Kamar</Link>
         <div>
-          {currentUser && currentUser.avatar ? (
+          {currentUser?.avatar ? (
             <img src={currentUser.avatar} alt="avatar" />
           ) : (
-            <div className="avatar-placeholder">
-              {currentUser.name.charAt(0).toUpperCase()}
+            <div className="avatar__placeholder">
+              {currentUser?.name?.charAt(0)?.toUpperCase()}
             </div>
           )}
         </div>
@@ -90,4 +91,21 @@ const Header = ({ onCreateModal, cityName }) => {
 };
 
 export default Header;
-*/
+
+/*
+ </div>
+        <Link to="/profile">Ian Kamar</Link>
+        <div>
+          <img src={avatar} alt="avatar" />{" "}
+        </div>
+
+        <Link to="/profile">{currentUser && currentUser.name}</Link>
+        <div>
+          {currentUser && currentUser.avatar ? (
+            <img src={currentUser.avatar} alt="avatar" />
+          ) : (
+            <div className="avatar__placeholder">
+              {currentUser.name.charAt(0).toUpperCase()}
+            </div>
+          )}
+        </div> */
