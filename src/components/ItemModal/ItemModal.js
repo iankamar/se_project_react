@@ -39,7 +39,7 @@ export default ItemModal;
 */
 
 import React, { useContext } from "react";
-import { CurrentUserContext } from "../Contexts/CurrentUserContext";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import "./ItemModal.css";
 
 const ItemModal = ({ selectedCard, onClose, handleOpenDeleteModal }) => {
