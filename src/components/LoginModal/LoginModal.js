@@ -30,20 +30,21 @@ const LoginModal = ({
 
   return (
     <ModalWithForm
+      className="modal__title"
       isOpen={isOpen}
       type="login"
       title="Log in"
       buttonText={
-        isLoading ? "Loading..." : isFormFilled ? "Ready to Log in" : "Log in"
+        isLoading ? "Loading..." : isFormFilled ? " Log in" : "Log in"
       }
       onCloseModal={handleCloseModal}
       onSubmit={handleSubmit}
     >
-      <h4 className={showFormError ? "form__label_error" : "form__label"}>
+      <h4 className={showFormError ? "modal__labelError" : "modal__label"}>
         {showFormError ? "Incorrect email or password" : "Email"}
       </h4>
       <input
-        className={showFormError ? "form__input_error" : "form__input"}
+        className={showFormError ? "modal__inputError" : "modal__input"}
         type="email"
         placeholder="Email"
         value={credentials.email}
@@ -51,11 +52,11 @@ const LoginModal = ({
         name="email"
         required
       />
-      <h4 className={showFormError ? "form__label_error" : "form__label"}>
+      <h4 className={showFormError ? "modal__labelError" : "modal__label"}>
         {showFormError ? "Incorrect email or password" : "Password"}
       </h4>
       <input
-        className={showFormError ? "form__input_error" : "form__input"}
+        className={showFormError ? "modal__inputError" : "modal__input"}
         type="password"
         placeholder="Password"
         value={credentials.password}
@@ -63,7 +64,7 @@ const LoginModal = ({
         name="password"
         required
       />
-      <p className="modal__form-btn_alt" onClick={handleToggleModal}>
+      <p className="modal__register" onClick={handleToggleModal}>
         or Register
       </p>
     </ModalWithForm>
