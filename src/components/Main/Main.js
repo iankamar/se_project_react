@@ -2,6 +2,8 @@ import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
 import { useMemo, useContext } from "react";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+
 import "./Main.css";
 
 function isDaytime() {
@@ -9,8 +11,17 @@ function isDaytime() {
   return currentHour >= 6 && currentHour < 18;
 }
 
-function Main({ weatherTemp, onSelectCard, clothingItems }) {
+function Main({
+  weatherTemp,
+  onSelectCard,
+  clothingItems,
+  handleCardClick,
+  handleLikeClick,
+  isLoggedIn,
+}) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+  const currentUser = useContext(CurrentUserContext);
+
   let temp =
     typeof weatherTemp === "number"
       ? weatherTemp
@@ -55,7 +66,23 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
         wear:
         <div className="card_items">
           {filteredCards.map((item, index) => (
-            <ItemCard key={index} item={item} onSelectCard={onSelectCard} />
+            <ItemCard
+              key={item._id}
+              item={item}
+              onSelectCard={onSelectCard}
+              isOpen="false"
+              clothingOption={item}
+              handleCardClick={() => handleCardClick(item)}
+              isLoggedIn={isLoggedIn}
+              currentUser={currentUser}
+              handleLikeClick={() => {
+                handleLikeClick(
+                  item._id,
+                  item.likes.includes(currentUser._id),
+                  currentUser
+                );
+              }}
+            />
           ))}
         </div>
       </section>

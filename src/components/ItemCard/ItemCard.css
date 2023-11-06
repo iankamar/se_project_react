@@ -4,19 +4,44 @@
   flex-direction: column;
   align-items: center;
 }
-
-.card__image {
-  width: 100%;
-  height: auto;
-  gap: 20px;
-  border-radius: 15px;
+.card__name {
+  text-align: center;
 }
 
-.card__name {
+.card__image {
+  width: 325px;
+  height: 328px;
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.like__button {
+  height: 90vh;
+  width: 3vh;
   position: absolute;
-  background-color: #fff;
-  color: rgba(0, 0, 0, 0.3);
-  border-radius: 2px;
+  top: 5px;
+  right: 0;
+  border: none;
+  background: transparent;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.like__button.liked {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  background-image: url("../../images/liked.png");
+}
+
+.like__button.not-liked {
+  background-image: url("../../images/unliked.png");
 }
 
 @media screen and (max-width: 590px) {

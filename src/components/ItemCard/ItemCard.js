@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import "./ItemCard.css";
 
-const ItemCard = ({ item, onSelectCard, onCardLike, currentUser }) => {
-  const isLiked = item.likes
-    ? item.likes.some((id) => id === currentUser._id)
-    : false;
-
-  const itemLikeButton = isLiked ? "liked" : "not-liked";
+const ItemCard = ({ item, onSelectCard, handleLikeCard }) => {
+  const currentUser = useContext(CurrentUserContext);
+  const currentUserId = currentUser._id || null;
+  const [isLiked, setIsLiked] = useState(
+    item.likes ? item.likes.includes(currentUserId) : false
+  );
 
   const handleLikeClick = () => {
     if (currentUser) {
-      onCardLike(item);
+      handleLikeCard(item);
+      setIsLiked(!isLiked);
     }
   };
 
@@ -20,16 +22,17 @@ const ItemCard = ({ item, onSelectCard, onCardLike, currentUser }) => {
         <img
           src={item.link}
           alt={item.name}
-          className="card_image"
+          className="card__image"
           onClick={() => onSelectCard(item)}
         />
         {currentUser && (
-          <button className={itemLikeButton} onClick={handleLikeClick}>
-            Like
-          </button>
+          <button
+            className={`like__button ${isLiked ? "liked" : "not-liked"}`}
+            onClick={handleLikeClick}
+          ></button>
         )}
       </div>
-      <h3 className="card_name"> {item.name} </h3>
+      <h3 className="card__name"> {item.name} </h3>
     </div>
   );
 };

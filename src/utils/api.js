@@ -1,4 +1,6 @@
-export const baseUrl = process.env.REACT_APP_API_URL || "http://localhost:3001";
+export const baseUrl =
+  process.env.NODE_ENV === process.env.REACT_APP_API_URL ||
+  "http://localhost:3001";
 
 export const handleServerResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
@@ -41,12 +43,16 @@ export const removeItem = async (id) => {
 };
 
 export const register = async ({ name, avatar, email, password }) => {
+  console.log("Registering user:", email, password, name, avatar);
   return request(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ name, avatar, email, password }),
+  }).catch((error) => {
+    console.error("Error during registration:", error);
+    throw error;
   });
 };
 

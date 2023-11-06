@@ -1,46 +1,42 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const RegisterModal = ({
   isOpen,
-  onCloseModal,
+  handleCloseModal,
   handleRegistration,
   handleToggleModal,
   isLoading,
 }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [avatar, setAvatar] = useState("");
+  const [credentials, setCredentials] = useState({
+    email: "",
+    password: "",
+    name: "",
+    avatar: "",
+  });
   const history = useHistory();
 
   useEffect(() => {
-    setEmail("");
-    setPassword("");
-    setName("");
-    setAvatar("");
+    setCredentials({
+      email: "",
+      password: "",
+      name: "",
+      avatar: "",
+    });
   }, [isOpen]);
 
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleName = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleAvatar = (e) => {
-    setAvatar(e.target.value);
+  const handleChange = (e) => {
+    setCredentials({
+      ...credentials,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleRegistration({ name, avatar, email, password });
+    console.log("Submitting registration form with credentials:", credentials);
+    handleRegistration(credentials);
     history.push("/profile");
   };
 
@@ -50,7 +46,7 @@ const RegisterModal = ({
       type="register"
       title="Sign up"
       buttonText={isLoading ? "Loading..." : "Next"}
-      onCloseModal={onCloseModal}
+      onCloseModal={handleCloseModal}
       onSubmit={handleSubmit}
     >
       <h3 className="modal__label">Email</h3>
@@ -58,8 +54,8 @@ const RegisterModal = ({
         className="modal__input"
         name="email"
         type="email"
-        value={email}
-        onChange={handleEmail}
+        value={credentials.email}
+        onChange={handleChange}
         placeholder="Email"
         required
       />
@@ -68,8 +64,8 @@ const RegisterModal = ({
         className="modal__input"
         name="password"
         type="text"
-        value={password}
-        onChange={handlePassword}
+        value={credentials.password}
+        onChange={handleChange}
         placeholder="Password"
         required
       />
@@ -78,8 +74,8 @@ const RegisterModal = ({
         className="modal__input"
         name="name"
         type="text"
-        value={name}
-        onChange={handleName}
+        value={credentials.name}
+        onChange={handleChange}
         placeholder="Name"
       />
       <h3 className="modal__label">Avatar URL</h3>
@@ -87,8 +83,8 @@ const RegisterModal = ({
         className="modal__input"
         name="avatar"
         type="url"
-        value={avatar}
-        onChange={handleAvatar}
+        value={credentials.avatar}
+        onChange={handleChange}
         placeholder="Avatar URL"
       />
 
