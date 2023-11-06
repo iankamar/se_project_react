@@ -106,7 +106,7 @@
   border-right-style: none;
   border-left-style: none;
   box-sizing: border-box;
-  width: 440px;
+  /*width: 440px;*/
   height: 42px;
   margin: 0;
   max-width: 100vh;
