@@ -49,7 +49,7 @@ const RegisterModal = ({
       onCloseModal={handleCloseModal}
       onSubmit={handleSubmit}
     >
-      <h3 className="modal__label">Email</h3>
+      <h3 className="modal__label">Email*</h3>
       <input
         className="modal__input"
         name="email"
@@ -59,7 +59,7 @@ const RegisterModal = ({
         placeholder="Email"
         required
       />
-      <h3 className="modal__label">Password</h3>
+      <h3 className="modal__label">Password*</h3>
       <input
         className="modal__input"
         name="password"

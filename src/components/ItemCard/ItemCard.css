@@ -4,29 +4,34 @@
   flex-direction: column;
   align-items: center;
 }
+
 .card__name {
   text-align: center;
+  position: relative;
+  top: -330px;
+  background-color: #fff;
+  color: #838383;
+  width: 99px;
+  height: 25px;
+  margin-left: 100px;
 }
 
 .card__image {
   width: 325px;
   height: 328px;
   border-radius: 10px;
-  z-index: 0;
 }
 
 .like__button {
-  height: 90vh;
+  height: 3vh;
   width: 3vh;
   position: absolute;
-  top: 5px;
-  right: 0;
+  top: 19px;
+  right: 90px;
   border: none;
   background: transparent;
   background-repeat: no-repeat;
-  z-index: 1;
 }
-
 .like__button.liked {
   position: absolute;
   top: 0;

@@ -20,6 +20,15 @@
   align-items: center;
 }
 
+.modal__body {
+  background-color: #fff;
+  max-width: 440px;
+  border-radius: 20px;
+  padding: 34px 36px;
+  flex-direction: column;
+  align-items: center;
+}
+
 .modal__content:item {
   background-color: #fff;
   width: 670px;
@@ -85,9 +94,8 @@
 }
 
 .modal__labelError {
-  color: #FF4D00;
+  color: #ff4d00;
 }
-
 
 .modal__label {
   display: flex;
@@ -97,7 +105,8 @@
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   color: rgba(0, 0, 0, 1);
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+  height: 20px;
 }
 
 .modal__label:last-child {
@@ -111,13 +120,16 @@
   font-size: 16px;
   height: 32px;
   margin: 0;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: bold;
+  padding-top: 0px;
 }
 
 .modal__inputError {
-  color: #FF4D00;
+  color: #ff4d00;
   padding: 5px;
   border: none;
-  border-bottom: #FF4D00 solid 1px;
+  border-bottom: #ff4d00 solid 1px;
 }
 
 .modal__input:last-child {
@@ -159,7 +171,7 @@ input[type="radio"]:checked + label {
 
 .modal__close {
   margin-top: -30px;
-  margin-left: 400px;
+  margin-left: 405px;
   background-color: transparent;
   border: none;
   position: absolute;
@@ -169,6 +181,7 @@ input[type="radio"]:checked + label {
   font-size: 24px;
   transition: opacity 0.2s linear;
   font-weight: bold;
+  color: #838383;
 }
 
 .modal__close:hover {
@@ -184,14 +197,16 @@ input[type="radio"]:checked + label {
 }
 
 .modal__save {
-  background-color: #d3d3d3;
+  background-color: rgba(0, 0, 0, 0.3);
   color: #fff;
   border: none;
   border-radius: 4px;
   height: 36px;
-  width: 124px;
+  width: 73px;
   transition: 0.2s ease-in-out;
   margin-top: 45px;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: bold;
 }
 
 .modal__save:hover:not(:disabled) {
@@ -272,20 +287,20 @@ input[type="radio"]:checked + label {
 }
 
 .modal__register {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.3);
   font-size: 16px;
   transition: 0.2s;
   position: relative;
-  top: 30px;
-  left: 140px;
+  top: 28px;
+  left: 80px;
   margin-bottom: -44px;
   width: fit-content;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: bold;
 }
 
 .modal__register {
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.6);
-  color:#d3d3d3;
 }
 
 @media screen and (max-width: 590px) {

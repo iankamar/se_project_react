@@ -8,7 +8,7 @@ import "./Main.css";
 
 function isDaytime() {
   const currentHour = new Date().getHours();
-  return currentHour >= 6 && currentHour < 18;
+  return currentHour >= 7 && currentHour < 17;
 }
 
 function Main({
