@@ -1,14 +1,41 @@
 export const baseUrl =
   process.env.NODE_ENV === process.env.REACT_APP_API_URL ||
   "http://localhost:3001";
+console.log(baseUrl);
 
+/*
 export const handleServerResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+};
+*/
+
+export const handleServerResponse = (res) => {
+  const contentType = res.headers.get("content-type");
+  if (contentType && contentType.includes("application/json")) {
+    return res.json();
+  } else {
+    return Promise.reject(
+      `Expected JSON but received ${contentType || "unknown format"}: ${
+        res.status
+      }`
+    );
+  }
 };
 
 export const request = async (url, options) => {
   return fetch(url, options).then(handleServerResponse);
 };
+
+/*
+export const getItemList = async () => {
+  return request(`${baseUrl}/items`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+};
+*/
 
 export const getItemList = async () => {
   return request(`${baseUrl}/items`, {
@@ -16,6 +43,11 @@ export const getItemList = async () => {
     headers: {
       "Content-Type": "application/json",
     },
+  }).then((res) => {
+    if (res.headers.get("Content-Type") !== "application/json") {
+      throw new Error("Server returned an HTML error page");
+    }
+    return res.json();
   });
 };
 
