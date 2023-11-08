@@ -33,4 +33,4 @@ The project utilizes the following technologies:
 
 ## Server created with Express
 
-- [Link](https://github.com/iankamar/se_project_express)
+## [Link](https://github.com/iankamar/se_project_express)
