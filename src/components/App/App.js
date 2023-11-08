@@ -151,7 +151,7 @@ const App = () => {
       .then((res) => {
         if (res.token) {
           localStorage.setItem("jwt", res.token);
-          setIsAuthenticated(true);
+          /*setIsAuthenticated(true);*/
           setIsLoggedIn(true);
         }
       })
