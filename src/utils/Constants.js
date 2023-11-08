@@ -13,7 +13,7 @@ export const weatherOptions = [
     url: sunnyDay,
     day: true,
     type: "sunny",
-    tempRange: "hot",
+    tempRange: ["hot", "warm"],
   },
   {
     url: cloudyDay,
@@ -47,7 +47,7 @@ export const weatherOptions = [
     url: moon,
     day: false,
     type: "moon",
-    tempRange: "hot",
+    tempRange: ["hot", "warm"],
   },
   {
     url: cloudy,
