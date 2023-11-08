@@ -33,7 +33,7 @@ function Main({
     if (currentTemperatureUnit === "F") {
       if (temp >= 86) {
         return "hot";
-      } else if (temp >= 60 && weatherTemp <= 85) {
+      } else if (temp >= 60 && temp <= 85) {
         return "warm";
       } else if (temp <= 60) {
         return "cold";
@@ -48,6 +48,7 @@ function Main({
       }
     }
   }, [temp, currentTemperatureUnit, weatherTemp]);
+
   const filteredCards = clothingItems.filter((item) => {
     return item.weather ? item.weather.toLowerCase() === weatherType : false;
   });
