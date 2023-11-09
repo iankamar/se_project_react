@@ -21,11 +21,10 @@ import {
 import {
   register,
   login,
-  checkToken,
   authorize,
   getUser,
   updateUser,
-} from "../../utils/api";
+} from "../../utils/auth";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
@@ -220,15 +219,7 @@ const App = () => {
     setActiveModal("item");
   };
 
-  // Effects
-  useEffect(() => {
-    const token = localStorage.getItem("jwt");
-    if (token) {
-      checkToken(token)
-        .then((res) => setIsAuthenticated(res))
-        .catch((err) => console.log(err));
-    }
-  });
+  // Effect
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");

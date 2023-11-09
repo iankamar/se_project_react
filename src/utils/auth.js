@@ -1,6 +1,4 @@
-export const baseUrl =
-  process.env.NODE_ENV === process.env.REACT_APP_API_URL ||
-  "http://localhost:3001";
+export const baseUrl = "http://localhost:3001";
 
 export const handleServerResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
@@ -11,7 +9,7 @@ export const request = async (url, options) => {
   return handleServerResponse(res);
 };
 
-export const register = async ({ name, avatar, email, password }) => {
+export const register = ({ name, avatar, email, password }) => {
   return request(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
@@ -21,7 +19,7 @@ export const register = async ({ name, avatar, email, password }) => {
   });
 };
 
-export const login = async ({ email, password }) => {
+export const login = ({ email, password }) => {
   return request(`${baseUrl}/signin`, {
     method: "POST",
     headers: {
@@ -31,7 +29,7 @@ export const login = async ({ email, password }) => {
   });
 };
 
-export const getUser = async () => {
+export const getUser = () => {
   return request(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
@@ -43,7 +41,7 @@ export const getUser = async () => {
   });
 };
 
-export const updateUser = async (name, avatar, token) => {
+export const updateUser = (name, avatar, token) => {
   return request(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: {
@@ -55,7 +53,7 @@ export const updateUser = async (name, avatar, token) => {
   });
 };
 
-export const authorize = async (email, password) => {
+export const authorize = (email, password) => {
   return request(`${baseUrl}/signin`, {
     method: "POST",
     headers: {

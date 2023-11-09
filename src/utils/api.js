@@ -4,11 +4,11 @@ export const handleServerResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
 
-export const request = async (url, options) => {
+export const request = (url, options) => {
   return fetch(url, options).then(handleServerResponse);
 };
 
-export const getItemList = async () => {
+export const getItemList = () => {
   return request(`${baseUrl}/items`, {
     method: "GET",
     headers: {
@@ -37,82 +37,6 @@ export const removeItem = async (id) => {
     headers: {
       "Content-Type": "application/json",
     },
-  });
-};
-
-export const register = async ({ name, avatar, email, password }) => {
-  console.log("Registering user:", email, password, name, avatar);
-  return request(`${baseUrl}/signup`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ name, avatar, email, password }),
-  }).catch((error) => {
-    console.error("Error during registration:", error);
-    throw error;
-  });
-};
-
-export const login = async ({ email, password }) => {
-  return request(`${baseUrl}/signin`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email, password }),
-  });
-};
-
-export const checkToken = async (token) => {
-  return request(`${baseUrl}/checkToken`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
-};
-
-export const getUser = async () => {
-  return request(`${baseUrl}/users/me`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  }).then((data) => {
-    return data;
-  });
-};
-
-export const updateUser = async (id, name, avatar) => {
-  return request(`${baseUrl}/users/${id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-    body: JSON.stringify({
-      name,
-      avatar,
-    }),
-  });
-};
-
-export const authorize = async (email, password) => {
-  return request(`${baseUrl}/signin`, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email, password }),
-  }).then((data) => {
-    if (data.token) {
-      localStorage.setItem("token", data.token);
-      return data;
-    }
   });
 };
 

@@ -3,7 +3,7 @@ import "./Profile.css";
 import SideBar from "./SideBar/SideBar";
 import ClothesSection from "./ClothesSection/ClothesSection";
 
-const Profile = ({ handleAddClick, onSelectCard, clothingItems }) => {
+const Profile = ({ onSelectCard, handleAddClick, clothingItems }) => {
   return (
     <div className="profile">
       <div className="profile__content">

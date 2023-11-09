@@ -31,7 +31,8 @@
 
 .profile__items {
   display: flex;
-  justify-content: flex-starts;
+  position: relative;
+  left: 220px;
 }
 /*
 .profile__itemsCard {

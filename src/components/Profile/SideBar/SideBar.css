@@ -1,3 +1,12 @@
+/*.profile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile__info {
+  display: table-column;
+}
+
 .profile__avatar {
   display: flex;
   margin-left: 20px;
@@ -7,4 +16,70 @@
   height: 56px;
   top: 119px;
   left: 40px;
+}
+
+.profile__username {
+  margin: 0px;
+  line-height: 25px;
+  font-size: 20px;
+  margin-left: 16px;
+}
+
+.profile__button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  line-height: 25px;
+  font-size: 20px;
+  padding-bottom: 8px;
+}
+*/
+
+body {
+  background-color: white;
+  font-family: Arial, sans-serif;
+}
+
+.profile__avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 75px;
+  position: relative;
+  left: 6px;
+}
+
+.profile__avatar img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.profile__avatar div {
+  margin-top: 10px;
+}
+
+.profile__avatar div a {
+  text-decoration: none;
+  color: blue;
+  font-size: 18px;
+}
+
+.profile__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+}
+
+.profile__button {
+  margin-top: 10px;
+  border: none;
+  background-color: transparent;
+  color: #000;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 25px;
+  font-weight: bold;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
 }
