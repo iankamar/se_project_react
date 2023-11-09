@@ -45,7 +45,7 @@ export const addCardLike = (_id) => {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("token")}`,
+      authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
   });
 };
@@ -55,7 +55,7 @@ export const removeCardLike = (_id) => {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("token")}`,
+      authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
   });
 };

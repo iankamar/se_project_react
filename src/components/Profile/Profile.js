@@ -3,7 +3,7 @@ import "./Profile.css";
 import SideBar from "./SideBar/SideBar";
 import ClothesSection from "./ClothesSection/ClothesSection";
 
-const Profile = ({ onSelectCard, handleAddClick, clothingItems }) => {
+const Profile = ({ item, onSelectCard, handleCardClick, clothingItems }) => {
   return (
     <div className="profile">
       <div className="profile__content">
@@ -13,7 +13,7 @@ const Profile = ({ onSelectCard, handleAddClick, clothingItems }) => {
             <h4>Your items</h4>
             <button
               type="submit"
-              onClick={() => handleAddClick("create")}
+              onClick={() => item("create")}
               className="profile__item"
             >
               {" "}
@@ -28,7 +28,8 @@ const Profile = ({ onSelectCard, handleAddClick, clothingItems }) => {
           </div>
           <ClothesSection
             clothingItems={clothingItems}
-            onSelectCard={onSelectCard}
+            // onSelectCard={item}
+            // onClick={() => onSelectCard(item)}
           />
         </div>
       </div>

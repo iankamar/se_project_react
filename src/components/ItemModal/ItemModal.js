@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import "./ItemModal.css";
 
-const ItemModal = ({ selectedCard, onClose, handleOpenDeleteModal }) => {
+const ItemModal = ({ item, selectedCard, onClose, handleOpenDeleteModal }) => {
   const currentUser = useContext(CurrentUserContext);
   const isOwn =
     selectedCard &&
@@ -23,7 +23,7 @@ const ItemModal = ({ selectedCard, onClose, handleOpenDeleteModal }) => {
         <button type="button" onClick={onClose} className="modal__close">
           &#x2715;
         </button>
-        <img src={selectedCard.link} alt={selectedCard.name} />
+        <img src={selectedCard.imageUrl} alt={selectedCard.name} />
         <div className="modal__align">
           <h3> {selectedCard.name}</h3>
           <button
