@@ -49,7 +49,7 @@ const EditProfileModal = ({
     >
       <h4>Name*</h4>
       <input
-        className="form__input"
+        className="modal__input"
         name="name"
         type="name"
         value={name}
@@ -58,7 +58,7 @@ const EditProfileModal = ({
       ></input>
       <h4>Avatar*</h4>
       <input
-        className="form__input"
+        className="modal__input"
         name="avatar"
         type="url"
         value={avatar}
