@@ -10,6 +10,9 @@ const ClothesSection = ({
   handleLikeClick,
 }) => {
   const currentUser = useContext(CurrentUserContext);
+  if (typeof onSelectCard !== "function") {
+    return null;
+  }
   return (
     <div className="profile__itemsCard">
       {clothingItems.map((item) => (
