@@ -11,6 +11,7 @@ import { Route, Switch } from "react-router-dom";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
 import { defaultClothingItems } from "../../utils/Constants";
+import { useHistory } from "react-router-dom";
 import {
   getItemList,
   addItem,
@@ -33,20 +34,22 @@ import "./App.css";
 const App = () => {
   // States
   const [activeModal, setActiveModal] = useState("");
-  // const [weatherData, setWeatherData] = useState({});
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   const [cityName, setCityName] = useState("");
   const [isLoading, setIsLoading] = React.useState(false);
-  const [setIsAuthenticated] = useState(false);
+  const [/*isAuthenticated,*/ setIsAuthenticated] = useState(false);
+  const history = useHistory();
   const [currentUser, setCurrentUser] = useState({
     _id: "",
     name: "",
     avatar: "",
   });
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("token") ? true : false
+  );
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -62,6 +65,10 @@ const App = () => {
   };
 
   const handleDeleteItem = (selectedCard) => {
+    if (!isLoggedIn) {
+      console.error("Error: User is not logged in");
+      return;
+    }
     removeItem(selectedCard._id)
       .then((res) => {
         const deleteId = selectedCard._id;
@@ -83,8 +90,6 @@ const App = () => {
   };
 
   const handleAddItem = (itemCard) => {
-    console.log(itemCard);
-
     const handleItemRequest = () => {
       const item = {
         name: itemCard.name,
@@ -95,7 +100,7 @@ const App = () => {
       };
 
       return addItem(item).then((item) => {
-        setClothingItems([item, ...clothingItems]);
+        setClothingItems([item.data, ...clothingItems]);
         handleCloseModal(item);
       });
     };
@@ -149,8 +154,8 @@ const App = () => {
     login({ email, password })
       .then((res) => {
         if (res.token) {
-          localStorage.setItem("jwt", res.token);
-          /*setIsAuthenticated(true);*/
+          localStorage.setItem("token", res.token);
+          setIsAuthenticated(true);
           setIsLoggedIn(true);
         }
       })
@@ -158,17 +163,19 @@ const App = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("jwt");
+    localStorage.removeItem("token");
     setIsLoggedIn(false);
-    setIsAuthenticated(false);
   };
 
   const handleAuthorization = (email, password) => {
     setIsLoading(true);
     authorize(email, password)
-      .then(() => {
+      .then((res, jwt) => {
+        localStorage.setItem("token", res.token);
         setIsLoggedIn(true);
+
         handleCloseModal();
+        history.push("/");
       })
       .catch((err) => {
         console.log(err);
@@ -178,18 +185,23 @@ const App = () => {
       });
   };
 
+  const updateProfile = () => {
+    setActiveModal("update");
+  };
+
   const handleProfileUpdate = ({ name, avatar, token }) => {
     setIsLoading(true);
     updateUser(name, avatar, token)
       .then((res) => {
         setCurrentUser(res);
         handleCloseModal();
+        setIsLoading(false);
+        return res;
       })
       .catch((err) => {
         console.log(err);
-      })
-      .finally(() => {
         setIsLoading(false);
+        throw err;
       });
   };
 
@@ -211,6 +223,10 @@ const App = () => {
   };
 
   const handleDeleteClick = () => {
+    if (!isLoggedIn) {
+      console.error("Error: User is not logged in");
+      return;
+    }
     setActiveModal("confirm");
   };
 
@@ -222,7 +238,7 @@ const App = () => {
   // Effect
 
   useEffect(() => {
-    const token = localStorage.getItem("jwt");
+    const token = localStorage.getItem("token");
     if (token) {
       fetch("/users/me", {
         headers: {
@@ -231,7 +247,7 @@ const App = () => {
       });
       setIsLoggedIn(true);
       getUser(token)
-        .then((response) => response.json())
+        // .then((response) => response.json())
         .then((data) => setCurrentUser(data))
         .catch((error) => console.error(error));
     }
@@ -338,6 +354,8 @@ const App = () => {
                 openAddModal={() => {
                   setActiveModal("add");
                 }}
+                handleCreateModal={handleCreateModal}
+                updateProfile={updateProfile}
                 openEditModal={() => {
                   setActiveModal("update");
                 }}
@@ -376,6 +394,7 @@ const App = () => {
               card={selectedCard}
               handleDeleteItem={handleDeleteItem}
               handleDeleteClick={handleDeleteClick}
+              isLoggedIn={isLoggedIn}
             />
           )}
           {activeModal === "login" && (

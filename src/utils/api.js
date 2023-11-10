@@ -22,10 +22,11 @@ export const addItem = async (item) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
     body: JSON.stringify({
       name: item.name,
-      link: item.link,
+      link: item.imageUrl,
       weather: item.weather,
     }),
   });
@@ -45,7 +46,7 @@ export const addCardLike = (_id) => {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("jwt")}`,
+      authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   });
 };
@@ -55,7 +56,7 @@ export const removeCardLike = (_id) => {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("jwt")}`,
+      authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   });
 };

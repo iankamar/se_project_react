@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import "./ItemModal.css";
 
-const ItemModal = ({ item, selectedCard, onClose, handleOpenDeleteModal }) => {
+const ItemModal = ({ item, selectedCard, onClose, handleDeleteItem }) => {
   const currentUser = useContext(CurrentUserContext);
   const isOwn =
     selectedCard &&
@@ -14,7 +14,7 @@ const ItemModal = ({ item, selectedCard, onClose, handleOpenDeleteModal }) => {
   }`;
 
   const handleClick = () => {
-    handleOpenDeleteModal(selectedCard);
+    handleDeleteItem(selectedCard);
   };
 
   return (

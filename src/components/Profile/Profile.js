@@ -3,18 +3,24 @@ import "./Profile.css";
 import SideBar from "./SideBar/SideBar";
 import ClothesSection from "./ClothesSection/ClothesSection";
 import ItemModal from "../ItemModal/ItemModal";
-import { defaultClothingItems } from "../../utils/Constants";
 import { removeItem } from "../../utils/api";
 
-const Profile = ({ item, onSelectedCard }) => {
+const Profile = ({
+  onSelectCard,
+  handleCreateModal,
+  clothingItems,
+  updateProfile,
+  handleLogout,
+}) => {
   const [selectedCard, setSelectedCard] = useState(null);
-  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
-  const [/*isLoading,*/ setIsLoading] = React.useState(false);
   const [activeModal, setActiveModal] = useState(null);
+  const [/*isLoading,*/ setIsLoading] = React.useState(false);
+
   const handleCardClick = (card) => {
     setSelectedCard(card);
     setActiveModal("item");
   };
+
   const handleCloseModal = () => {
     setSelectedCard(null);
     setActiveModal(null);
@@ -29,11 +35,11 @@ const Profile = ({ item, onSelectedCard }) => {
       .then((res) => {
         const deleteId = selectedCard._id;
 
-        const updateItems = setClothingItems.filter((item) => {
+        const updateItems = setSelectedCard.filter((item) => {
           return item._id !== deleteId;
         });
 
-        setClothingItems(updateItems);
+        setSelectedCard(updateItems);
 
         handleCloseModal();
       })
@@ -91,12 +97,12 @@ const Profile = ({ item, onSelectedCard }) => {
     <div className="profile">
       <div className="profile__content">
         <div className="profile__wrapper">
-          <SideBar />
+          <SideBar updateProfile={updateProfile} handleLogout={handleLogout} />
           <div className="profile__items">
             <h4>Your items</h4>
             <button
               type="submit"
-              onClick={() => onSelectedCard("create")}
+              onClick={() => handleCreateModal("create")}
               className="profile__item"
             >
               {" "}
@@ -112,7 +118,7 @@ const Profile = ({ item, onSelectedCard }) => {
           <ClothesSection
             clothingItems={clothingItems}
             onSelectCard={handleCardClick}
-            onClick={() => handleCardClick(item)}
+            // onClick={() => handleCardClick(item)}
           />
         </div>
       </div>
@@ -122,7 +128,7 @@ const Profile = ({ item, onSelectedCard }) => {
           handleCloseModal={handleCloseModal}
           isOpen={activeModal === "item"}
           type={"item"}
-          card={selectedCard.imageUrl}
+          card={selectedCard}
           handleDeleteItem={handleDeleteItem}
           handleDeleteClick={handleDeleteClick}
         />

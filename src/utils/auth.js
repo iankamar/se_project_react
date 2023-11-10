@@ -34,20 +34,20 @@ export const getUser = () => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("jwt")}`,
+      authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   }).then((data) => {
     return data;
   });
 };
 
-export const updateUser = (name, avatar, jwt) => {
+export const updateUser = (name, avatar, token) => {
   return request(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
-      authorization: `Bearer ${jwt}`,
+      authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ name, avatar }),
   });
@@ -62,8 +62,8 @@ export const authorize = (email, password) => {
     },
     body: JSON.stringify({ email, password }),
   }).then((data) => {
-    if (data.jwt) {
-      localStorage.setItem("jwt", data.jwt);
+    if (data.token) {
+      localStorage.setItem("jwt", data.token);
       return data;
     }
   });

@@ -56,18 +56,19 @@ const EditProfileModal = ({
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
 
-  const handleSubmit = (e) => {
-    handleProfileUpdate({
-      name,
-      avatar,
-      token: localStorage.getItem("token"),
-    })
-      .then(() => {
-        onCloseModal();
-      })
-      .catch((err) => {
-        console.log(err);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await handleProfileUpdate({
+        name: name ?? undefined,
+        avatar: avatar ?? undefined,
+        token: localStorage.getItem("token"),
       });
+
+      onCloseModal();
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleNameInput = (e) => {
