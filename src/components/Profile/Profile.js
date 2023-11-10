@@ -3,7 +3,7 @@ import "./Profile.css";
 import SideBar from "./SideBar/SideBar";
 import ClothesSection from "./ClothesSection/ClothesSection";
 import ItemModal from "../ItemModal/ItemModal";
-import { removeItem } from "../../utils/api";
+import { removeItem, removeCardLike, addCardLike } from "../../utils/api";
 
 const Profile = ({
   clothingItems,
@@ -11,6 +11,7 @@ const Profile = ({
   handleCreateModal,
   updateProfile,
   handleLogout,
+  setClothingItems,
 }) => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [activeModal, setActiveModal] = useState(null);
@@ -46,6 +47,22 @@ const Profile = ({
       .catch((err) => {
         console.error("Error deleting item:", err);
       });
+  };
+
+  const handleLikeClick = (cardId, isLiked) => {
+    const apiMethod = isLiked ? removeCardLike : addCardLike;
+
+    apiMethod(cardId)
+      .then((updatedCard) => {
+        const updatedItems = clothingItems.map((item) => {
+          if (item._id === updatedCard._id) {
+            return updatedCard;
+          }
+          return item;
+        });
+        setClothingItems(updatedItems);
+      })
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
@@ -115,6 +132,8 @@ const Profile = ({
           <ClothesSection
             clothingItems={clothingItems}
             onSelectCard={handleCardClick}
+            handleLikeClick={handleLikeClick}
+            handleLikeCard={handleLikeClick}
             // onClick={() => handleCardClick(item)}
           />
         </div>

@@ -134,7 +134,9 @@ const App = () => {
   const fetchClothingItems = () => {
     getItemList()
       .then((data) => {
-        setClothingItems(data);
+        if (data.length > 0) {
+          setClothingItems(data);
+        }
       })
       .catch((err) => console.log(err));
   };
@@ -145,6 +147,8 @@ const App = () => {
       .then((res) => {
         if (res) {
           handleLogin({ email, password });
+          handleCloseModal();
+          history.push("/");
         }
       })
       .catch((err) => console.log(err));
@@ -170,7 +174,7 @@ const App = () => {
   const handleAuthorization = (email, password) => {
     setIsLoading(true);
     authorize(email, password)
-      .then((res, jwt) => {
+      .then((res) => {
         localStorage.setItem("token", res.token);
         setIsLoggedIn(true);
 
