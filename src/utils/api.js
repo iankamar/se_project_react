@@ -26,7 +26,7 @@ export const addItem = async (item) => {
     },
     body: JSON.stringify({
       name: item.name,
-      link: item.imageUrl,
+      imageUrl: item.imageUrl,
       weather: item.weather,
     }),
   });
@@ -37,6 +37,7 @@ export const removeItem = async (id) => {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   });
 };

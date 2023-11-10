@@ -9,9 +9,9 @@ const EditProfileModal = ({
   isLoading,
 }) => {
   useEffect(() => {
-    setName(currentUser.name);
-    setAvatar(currentUser.avatar);
-  }, [isOpen]);
+    setName(currentUser?.name);
+    setAvatar(currentUser?.avatar);
+  }, [currentUser, isOpen]);
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
 

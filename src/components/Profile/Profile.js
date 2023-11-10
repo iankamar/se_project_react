@@ -6,15 +6,14 @@ import ItemModal from "../ItemModal/ItemModal";
 import { removeItem } from "../../utils/api";
 
 const Profile = ({
+  clothingItems,
   onSelectCard,
   handleCreateModal,
-  clothingItems,
   updateProfile,
   handleLogout,
 }) => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [activeModal, setActiveModal] = useState(null);
-  const [/*isLoading,*/ setIsLoading] = React.useState(false);
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
@@ -35,20 +34,18 @@ const Profile = ({
       .then((res) => {
         const deleteId = selectedCard._id;
 
-        const updateItems = setSelectedCard.filter((item) => {
+        const updateItems = clothingItems.filter((item) => {
           return item._id !== deleteId;
         });
 
-        setSelectedCard(updateItems);
+        clothingItems = updateItems;
 
         handleCloseModal();
       })
 
       .catch((err) => {
         console.error("Error deleting item:", err);
-      })
-
-      .finally(() => setIsLoading(false));
+      });
   };
 
   useEffect(() => {

@@ -7,7 +7,7 @@ const SideBar = ({ handleLogout, updateProfile }) => {
   const currentUser = useContext(CurrentUserContext);
 
   return (
-    <div style={{ zIndex: "100" }}>
+    <div style={{ zIndex: "100", marginTop: "100px" }}>
       <div className="profile__avatar">
         <img src={currentUser?.avatar} alt="avatar" />
         <Link to="/profile">{currentUser?.name}</Link>

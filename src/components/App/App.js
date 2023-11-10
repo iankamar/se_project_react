@@ -9,6 +9,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import { Route, Switch } from "react-router-dom";
 import AddItemModal from "../AddItemModal/AddItemModal";
+import DeleteItemModal from "../DeleteItemModal/DeleteItemModal";
 import Profile from "../Profile/Profile";
 import { defaultClothingItems } from "../../utils/Constants";
 import { useHistory } from "react-router-dom";
@@ -94,11 +95,10 @@ const App = () => {
       const item = {
         name: itemCard.name,
 
-        link: itemCard.link,
+        imageUrl: itemCard.imageUrl,
 
         weather: itemCard.weatherType,
       };
-
       return addItem(item).then((item) => {
         setClothingItems([item.data, ...clothingItems]);
         handleCloseModal(item);
@@ -359,6 +359,7 @@ const App = () => {
                 openEditModal={() => {
                   setActiveModal("update");
                 }}
+                onSelectCard={handleSelectedCard}
                 isLoggedIn={isLoggedIn}
                 handleLogout={handleLogout}
                 isLoading={isLoading}
@@ -427,6 +428,18 @@ const App = () => {
               onCloseModal={handleCloseModal}
               currentUser={currentUser}
               handleProfileUpdate={handleProfileUpdate}
+              isLoading={isLoading}
+            />
+          )}
+
+          {activeModal === "confirm" && (
+            <DeleteItemModal
+              isOpen={activeModal === "confirm"}
+              type={"confirm"}
+              selectedCard={selectedCard}
+              onCloseModal={handleCloseModal}
+              currentUser={currentUser}
+              handleDeleteItem={handleDeleteItem}
               isLoading={isLoading}
             />
           )}
