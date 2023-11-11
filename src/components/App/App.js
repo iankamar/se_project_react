@@ -266,16 +266,6 @@ const App = () => {
       });
   }, []);
 
-  // useEffect(() => {
-  //   getItemList()
-  //     .then((data) => {
-  //       setClothingItems(data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching item list: ");
-  //     });
-  // }, []);
-
   useEffect(() => {
     if (!activeModal) return;
     const handleEscClose = (e) => {
