@@ -156,7 +156,7 @@ const App = () => {
       .then((res) => {
         if (res.token) {
           localStorage.setItem("token", res.token);
-          /*setIsAuthenticated(true);*/
+          setIsAuthenticated(true);
           setIsLoggedIn(true);
         }
       })
@@ -166,8 +166,6 @@ const App = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
-    setIsAuthenticated(false);
-    setCurrentUser(null);
   };
 
   const handleAuthorization = (email, password) => {
