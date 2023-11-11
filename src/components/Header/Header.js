@@ -19,7 +19,7 @@ const Header = ({
     <header className="header">
       <div className="header__logo">
         <div>
-          <Link to={"/"}>
+          <Link to="/">
             <img src={logo} alt="Logo" />
           </Link>
         </div>
@@ -51,7 +51,7 @@ const Header = ({
         </div>
         <div></div>
         {isLoggedIn ? (
-          <Link to={"/profile"} className="header__profileLink">
+          <Link to="/profile" className="header__profileLink">
             {currentUser?.avatar === "" ? (
               <div className="header__avatarPlaceholder">
                 {currentUser?.name[0]}
