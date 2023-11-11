@@ -23,30 +23,27 @@
 }
 
 .like__button {
-  height: 3vh;
-  width: 3vh;
+  height: 8vh;
+  width: 8vh;
   position: absolute;
-  top: 19px;
-  right: 90px;
+  top: 10px;
+  left: 10px;
   border: none;
   background: transparent;
   background-repeat: no-repeat;
-}
-.like__button.liked {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: none;
-  background: transparent;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 25px;
-  height: 25px;
-  background-image: url("../../images/liked.png");
 }
 
-.like__button.not-liked {
-  background-image: url("../../images/unliked.png");
+.heart {
+  position: relative;
+  right: -194px;
+  height: 37px;
+}
+
+.heart__filled {
+  position: relative;
+  right: -194px;
+  height: 37px;
+  fill: #000;
 }
 
 @media screen and (max-width: 590px) {

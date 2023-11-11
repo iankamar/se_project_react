@@ -47,11 +47,11 @@ function Main({
         return "cold";
       }
     }
-  }, [temp, currentTemperatureUnit, weatherTemp]);
+  }, [temp, currentTemperatureUnit]);
 
-  const filteredCards = clothingItems.filter((item) => {
-    return item.weather ? item.weather.toLowerCase() === weatherType : false;
-  });
+  const filteredCards = clothingItems.filter(
+    (item) => item.weather && item.weather.toLowerCase() === weatherType
+  );
 
   return (
     <main className="main">
@@ -78,7 +78,7 @@ function Main({
               handleLikeClick={() => {
                 handleLikeClick(
                   item._id,
-                  item.likes.includes(currentUser._id),
+                  item.likes?.includes(currentUser._id),
                   currentUser
                 );
               }}

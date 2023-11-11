@@ -56,7 +56,7 @@ const EditProfileModal = ({
         onChange={handleNameInput}
         placeholder="Name"
       ></input>
-      <h4>Avatar</h4>
+      <h4>Avatar*</h4>
       <input
         className="modal__input"
         name="avatar"

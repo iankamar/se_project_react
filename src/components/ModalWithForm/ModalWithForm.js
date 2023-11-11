@@ -7,6 +7,7 @@ const ModalWithForm = ({
   onClose,
   name,
   onSubmit,
+  type,
 }) => {
   return (
     <div className={`modal modal_type_${name}`}>
@@ -20,9 +21,11 @@ const ModalWithForm = ({
         <div className="modal__fieldset">
           <form className="modal__form" onSubmit={onSubmit}>
             {children}
-            <button type="submit" className="modal__save">
-              {buttonText}
-            </button>
+            {type !== "confirm" && (
+              <button type="submit" className="modal__save">
+                {buttonText}
+              </button>
+            )}
           </form>
         </div>
       </div>

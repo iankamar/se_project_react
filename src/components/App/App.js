@@ -41,7 +41,7 @@ const App = () => {
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   const [cityName, setCityName] = useState("");
   const [isLoading, setIsLoading] = React.useState(false);
-  const [/*isAuthenticated,*/ setIsAuthenticated] = useState(false);
+  const [/*isAuthenticated, */ setIsAuthenticated] = useState(false);
   const history = useHistory();
   const [currentUser, setCurrentUser] = useState({
     _id: "",
@@ -66,10 +66,6 @@ const App = () => {
   };
 
   const handleDeleteItem = (selectedCard) => {
-    if (!isLoggedIn) {
-      console.error("Error: User is not logged in");
-      return;
-    }
     removeItem(selectedCard._id)
       .then((res) => {
         const deleteId = selectedCard._id;
@@ -95,10 +91,11 @@ const App = () => {
       const item = {
         name: itemCard.name,
 
-        imageUrl: itemCard.imageUrl,
+        link: itemCard.link,
 
         weather: itemCard.weatherType,
       };
+
       return addItem(item).then((item) => {
         setClothingItems([item.data, ...clothingItems]);
         handleCloseModal(item);
@@ -159,7 +156,7 @@ const App = () => {
       .then((res) => {
         if (res.token) {
           localStorage.setItem("token", res.token);
-          setIsAuthenticated(true);
+          /*setIsAuthenticated(true);*/
           setIsLoggedIn(true);
         }
       })
@@ -169,6 +166,8 @@ const App = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
+    setIsAuthenticated(false);
+    setCurrentUser(null);
   };
 
   const handleAuthorization = (email, password) => {
@@ -227,10 +226,6 @@ const App = () => {
   };
 
   const handleDeleteClick = () => {
-    if (!isLoggedIn) {
-      console.error("Error: User is not logged in");
-      return;
-    }
     setActiveModal("confirm");
   };
 
@@ -273,15 +268,15 @@ const App = () => {
       });
   }, []);
 
-  useEffect(() => {
-    getItemList()
-      .then((data) => {
-        setClothingItems(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching item list: ");
-      });
-  }, []);
+  // useEffect(() => {
+  //   getItemList()
+  //     .then((data) => {
+  //       setClothingItems(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching item list: ");
+  //     });
+  // }, []);
 
   useEffect(() => {
     if (!activeModal) return;

@@ -5,13 +5,10 @@ body {
 
 .profile__avatar {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 75px;
   position: relative;
-  left: -29px;
-  font-family: "Cabinet Grotesk", Arial, sans-serif;
-  font-size: 20px;
+  left: 6px;
 }
 
 .profile__avatar img {

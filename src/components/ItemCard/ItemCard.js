@@ -1,18 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import "./ItemCard.css";
+import { Heart } from "react-feather";
 
-const ItemCard = ({ item, onSelectCard, handleLikeCard }) => {
+const ItemCard = ({ item, onSelectCard, handleLikeClick }) => {
   const currentUser = useContext(CurrentUserContext);
-  const currentUserId = currentUser._id || null;
-  const [isLiked, setIsLiked] = useState(
-    item.likes ? item.likes.includes(currentUserId) : false
-  );
-
-  const handleLikeClick = () => {
+  const currentUserId = currentUser && currentUser._id ? currentUser._id : null;
+  const handleLike = () => {
     if (currentUser) {
-      handleLikeCard(item);
-      setIsLiked(!isLiked);
+      handleLikeClick(item);
     }
   };
 
@@ -20,16 +16,19 @@ const ItemCard = ({ item, onSelectCard, handleLikeCard }) => {
     <div>
       <div className="card">
         <img
-          src={item.imageUrl}
+          src={item?.link || item?.imageUrl}
           alt={item.name}
           className="card__image"
           onClick={() => onSelectCard(item)}
         />
-        {currentUser && (
-          <button
-            className={`like__button ${isLiked ? "liked" : "not-liked"}`}
-            onClick={handleLikeClick}
-          ></button>
+        {currentUser && currentUser._id && (
+          <div className="like__button" onClick={handleLike}>
+            {item.likes && item.likes.includes(currentUserId) ? (
+              <Heart className="heart__filled" />
+            ) : (
+              <Heart className="heart" />
+            )}
+          </div>
         )}
       </div>
       <h3 className="card__name"> {item.name} </h3>

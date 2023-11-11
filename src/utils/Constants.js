@@ -19,7 +19,7 @@ export const weatherOptions = [
     url: cloudyDay,
     day: true,
     type: "cloudy",
-    tempRange: ["warm", "cloud"],
+    tempRange: "cloud",
   },
   {
     url: rain,

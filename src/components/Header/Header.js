@@ -19,7 +19,7 @@ const Header = ({
     <header className="header">
       <div className="header__logo">
         <div>
-          <Link to="/">
+          <Link to={"/"}>
             <img src={logo} alt="Logo" />
           </Link>
         </div>
@@ -51,19 +51,19 @@ const Header = ({
         </div>
         <div></div>
         {isLoggedIn ? (
-          <Link to="/profile" className="header__profileLink">
-            <h2 className="header__username">{currentUser.name}</h2>
-            {currentUser.avatar === "" ? (
+          <Link to={"/profile"} className="header__profileLink">
+            {currentUser?.avatar === "" ? (
               <div className="header__avatarPlaceholder">
-                {currentUser.name[0]}
+                {currentUser?.name[0]}
               </div>
             ) : (
               <img
                 className="header__avatarIcon"
-                src={currentUser.avatar}
+                src={currentUser?.avatar}
                 alt="header__avatar"
               />
             )}
+            <h2 className="header__username">{currentUser?.name}</h2>
           </Link>
         ) : (
           <button className="header__button" onClick={openLoginModal}>

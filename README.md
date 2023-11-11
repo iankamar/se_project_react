@@ -34,3 +34,5 @@ The project utilizes the following technologies:
 ## Server created with Express
 
 ## [Link](https://github.com/iankamar/se_project_express)
+
+## The application is optimized for desktop, mobile version coming soon.

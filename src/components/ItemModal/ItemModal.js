@@ -2,19 +2,23 @@ import React, { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import "./ItemModal.css";
 
-const ItemModal = ({ item, selectedCard, onClose, handleDeleteItem }) => {
+const ItemModal = ({
+  selectedCard,
+  onClose,
+  handleDeleteClick,
+  isLoggedIn,
+}) => {
   const currentUser = useContext(CurrentUserContext);
   const isOwn =
     selectedCard &&
     selectedCard.owner &&
-    selectedCard.owner._id === currentUser._id;
+    selectedCard.owner._id === currentUser?._id;
 
   const itemDeleteButton = `modal__deleteItem ${
     isOwn ? "modal__deleteItem_visible" : "modal__deleteItem_hidden"
   }`;
-
   const handleClick = () => {
-    handleDeleteItem(selectedCard);
+    handleDeleteClick(selectedCard);
   };
 
   return (
@@ -23,17 +27,28 @@ const ItemModal = ({ item, selectedCard, onClose, handleDeleteItem }) => {
         <button type="button" onClick={onClose} className="modal__close">
           &#x2715;
         </button>
-        <img src={selectedCard.imageUrl} alt={selectedCard.name} />
-        <div className="modal__align">
-          <h3> {selectedCard.name}</h3>
-          <button
-            type="button"
-            className={itemDeleteButton}
-            onClick={handleClick}
-          >
-            Delete item
-          </button>
-        </div>
+        <img
+          src={selectedCard.imageUrl || selectedCard.link}
+          alt={selectedCard.name}
+        />
+        {isLoggedIn ? (
+          <div className="modal__align">
+            <h3> {selectedCard.name}</h3>
+            {selectedCard &&
+              currentUser &&
+              selectedCard.owner === currentUser._id && (
+                <button
+                  type="button"
+                  className={itemDeleteButton}
+                  onClick={handleClick}
+                >
+                  Delete item
+                </button>
+              )}
+          </div>
+        ) : (
+          <></>
+        )}
         <div className="modal__weatherType">
           Weather type:{" "}
           {selectedCard.weather

@@ -11,7 +11,7 @@ function ClothesSection() {
       getItemList()
         .then((allClothes) => {
           const userClothes = allClothes.filter(
-            (clothing) => clothing.owner._id === currentUser._id
+            (clothing) => clothing.owner._id === currentUser?._id
           );
           setClothes(userClothes);
         })

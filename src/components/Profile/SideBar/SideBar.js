@@ -3,7 +3,7 @@ import "./SideBar.css";
 import { Link } from "react-router-dom";
 import CurrentUserContext from "../../../contexts/CurrentUserContext";
 
-const SideBar = ({ handleLogout, updateProfile }) => {
+const SideBar = ({ openEditModal, handleLogout, updateProfile }) => {
   const currentUser = useContext(CurrentUserContext);
 
   return (
@@ -15,7 +15,7 @@ const SideBar = ({ handleLogout, updateProfile }) => {
 
       <div className="profile__info">
         <button className="profile__button" onClick={updateProfile}>
-          Change profile data
+          Profile Change
         </button>
         <button className="profile__button" onClick={handleLogout}>
           Log out

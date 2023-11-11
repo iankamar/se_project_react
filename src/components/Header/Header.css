@@ -9,19 +9,20 @@
   font-weight: bold;
   font-size: 20px;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
+  box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
 }
 
 .header__logo {
   display: flex;
   gap: 20px;
   align-items: center;
+  z-index: 400;
 }
 
 .header__avatar-logo {
   display: flex;
+  gap: 20px;
   align-items: center;
-  position: relative;
-  right: 30px;
 }
 
 .header__item {
@@ -50,15 +51,12 @@
   grid-area: e;
   border-radius: 50%;
   object-fit: cover;
-  position: relative;
 }
 .header__username {
   margin-left: 20px;
-  margin-right: 20px;
+  margin-right: 12px;
   grid-area: d;
   color: black;
-  font-size: 20px;
-  font-family: "CabinetGrotesk-Regular", sans-serif;
 }
 
 .header__avatarPlaceholder {

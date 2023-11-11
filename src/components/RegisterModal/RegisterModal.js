@@ -37,7 +37,6 @@ const RegisterModal = ({
     e.preventDefault();
     console.log("Submitting registration form with credentials:", credentials);
     handleRegistration(credentials);
-    history.push("/profile");
   };
 
   return (
@@ -63,7 +62,7 @@ const RegisterModal = ({
       <input
         className="modal__input"
         name="password"
-        type="text"
+        type="password"
         value={credentials.password}
         onChange={handleChange}
         placeholder="Password"

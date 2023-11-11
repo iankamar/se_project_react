@@ -2,18 +2,25 @@ import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../ModalWithForm/ModalWithForm.css";
 
-const DeleteItemModal = ({ handleCloseModal, handleDeleteItem, isOpen }) => {
-  const handleSubmit = (selectedCard) => {
+const DeleteItemModal = ({
+  type,
+  onCloseModal,
+  handleDeleteItem,
+  isOpen,
+  selectedCard,
+}) => {
+  const handleSubmit = () => {
     handleDeleteItem(selectedCard);
-    handleCloseModal(selectedCard);
+    onCloseModal(selectedCard);
   };
 
   return (
     <ModalWithForm
       className="modal__content:Item"
-      onClose={handleCloseModal}
+      onClose={onCloseModal}
       isOpen={isOpen}
       onSubmit={handleSubmit}
+      type={type}
     >
       <div className="modal__fieldset:item">
         <div className="modal__warning">
@@ -25,7 +32,7 @@ const DeleteItemModal = ({ handleCloseModal, handleDeleteItem, isOpen }) => {
       <button type="submit" className="modal__delete">
         Yes, delete item
       </button>
-      <button type="submit" className="modal__cancel">
+      <button type="button" className="modal__cancel" onClick={onCloseModal}>
         Cancel
       </button>
     </ModalWithForm>
