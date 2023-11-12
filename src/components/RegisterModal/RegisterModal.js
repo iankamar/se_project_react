@@ -46,60 +46,59 @@ const RegisterModal = ({
       onCloseModal={handleCloseModal}
       onSubmit={handleSubmit}
     >
-      <label input="email" className="modal__label">
+      <label className="modal__label">
         Email*
+        <input
+          className="modal__input"
+          name="email"
+          type="email"
+          value={credentials.email}
+          onChange={handleChange}
+          placeholder="Email"
+          required
+        />
       </label>
-      <input
-        id="email"
-        className="modal__input"
-        name="email"
-        type="email"
-        value={credentials.email}
-        onChange={handleChange}
-        placeholder="Email"
-        required
-      />
-      <label input="password" className="modal__label">
+      <label className="modal__label">
         Password*
+        <input
+          className="modal__input"
+          name="password"
+          type="password"
+          value={credentials.password}
+          onChange={handleChange}
+          placeholder="Password"
+          required
+        />
       </label>
-      <input
-        id="password"
-        className="modal__input"
-        name="password"
-        type="password"
-        value={credentials.password}
-        onChange={handleChange}
-        placeholder="Password"
-        required
-      />
-      <label input="name" className="modal__label">
+      <label className="modal__label">
         Name
+        <input
+          className="modal__input"
+          name="name"
+          type="text"
+          value={credentials.name}
+          onChange={handleChange}
+          placeholder="Name"
+        />
       </label>
-      <input
-        id="name"
-        className="modal__input"
-        name="name"
-        type="text"
-        value={credentials.name}
-        onChange={handleChange}
-        placeholder="Name"
-      />
-      <label input="avatar" className="modal__label">
+      <label className="modal__label">
         Avatar URL
+        <input
+          className="modal__input"
+          name="avatar"
+          type="url"
+          value={credentials.avatar}
+          onChange={handleChange}
+          placeholder="Avatar URL"
+        />
       </label>
-      <input
-        id="avatar"
-        className="modal__input"
-        name="avatar"
-        type="url"
-        value={credentials.avatar}
-        onChange={handleChange}
-        placeholder="Avatar URL"
-      />
-
-      <p className="modal__register" onClick={handleToggleModal}>
+      <button
+        type="button"
+        className="modal__register"
+        onClick={handleToggleModal}
+      >
         or Log in
-      </p>
+      </button>
     </ModalWithForm>
   );
 };

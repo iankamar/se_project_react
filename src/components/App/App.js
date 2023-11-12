@@ -156,7 +156,6 @@ const App = () => {
       .then((res) => {
         if (res.token) {
           localStorage.setItem("token", res.token);
-          setIsAuthenticated(true);
           setIsLoggedIn(true);
         }
       })

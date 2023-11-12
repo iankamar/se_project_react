@@ -42,36 +42,35 @@ const LoginModal = ({
     >
       <label className={showFormError ? "modal__labelError" : "modal__label"}>
         {showFormError ? "Incorrect email or password" : "Email"}
+        <input
+          className={showFormError ? "modal__inputError" : "modal__input"}
+          type="email"
+          placeholder="Email"
+          value={credentials.email}
+          onChange={handleChange}
+          name="email"
+          required
+        />
       </label>
-      <input
-        className={showFormError ? "modal__inputError" : "modal__input"}
-        type="email"
-        placeholder="Email"
-        value={credentials.email}
-        onChange={handleChange}
-        name="email"
-        required
-      />
       <label className={showFormError ? "modal__labelError" : "modal__label"}>
         {showFormError ? "Incorrect email or password" : "Password"}
+        <input
+          className={showFormError ? "modal__inputError" : "modal__input"}
+          type="password"
+          placeholder="Password"
+          value={credentials.password}
+          onChange={handleChange}
+          name="password"
+          required
+        />
       </label>
-      <input
-        id="password"
-        className={showFormError ? "modal__inputError" : "modal__input"}
-        type="password"
-        placeholder="Password"
-        value={credentials.password}
-        onChange={handleChange}
-        name="password"
-        required
-      />
-      <label
-        input="Register"
+      <button
+        type="button"
         className="modal__register"
         onClick={handleToggleModal}
       >
         or Register
-      </label>
+      </button>
     </ModalWithForm>
   );
 };

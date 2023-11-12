@@ -34,10 +34,9 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
       onSubmit={handleSubmit}
     >
       <div className="modal__fieldset">
-        <label input="name" className="modal__label">
+        <label className="modal__label">
           Name
           <input
-            id="name"
             type="text"
             name="name"
             minLength="1"
@@ -51,10 +50,9 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
         </label>
       </div>
       <div className="modal__fieldset">
-        <label input="image" className="modal__label">
+        <label className="modal__label">
           Image
           <input
-            id="image"
             type="url"
             name="image"
             minLength="1"
@@ -80,7 +78,6 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
           <label>
             <input
               type="radio"
-              id="hot"
               value="hot"
               name="weatherType"
               onChange={handleWeatherTypeChange}
@@ -92,7 +89,6 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
           <label>
             <input
               type="radio"
-              id="warm"
               value="warm"
               name="weatherType"
               onChange={handleWeatherTypeChange}
@@ -104,7 +100,6 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
           <label>
             <input
               type="radio"
-              id="cold"
               value="cold"
               name="weatherType"
               onChange={handleWeatherTypeChange}
