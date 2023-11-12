@@ -34,6 +34,7 @@ import "./App.css";
 
 const App = () => {
   // States
+  const [allClothes, setAllClothes] = useState([]);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
@@ -98,7 +99,6 @@ const App = () => {
 
       return addItem(item).then((item) => {
         setClothingItems([item.data, ...clothingItems]);
-        handleCloseModal(item);
       });
     };
 
@@ -192,17 +192,18 @@ const App = () => {
 
   const handleProfileUpdate = ({ name, avatar, token }) => {
     setIsLoading(true);
+
     updateUser(name, avatar, token)
       .then((res) => {
         setCurrentUser(res);
         handleCloseModal();
-        setIsLoading(false);
         return res;
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
         setIsLoading(false);
-        throw err;
       });
   };
 
@@ -235,18 +236,25 @@ const App = () => {
   // Effect
 
   useEffect(() => {
+    getItemList()
+      .then((clothes) => {
+        setAllClothes(clothes);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+
+  useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("/users/me", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setIsLoggedIn(true);
       getUser(token)
-        // .then((response) => response.json())
-        .then((data) => setCurrentUser(data))
-        .catch((error) => console.error(error));
+        .then((data) => {
+          setCurrentUser(data);
+          setIsLoggedIn(true);
+        })
+        .catch((error) => {
+          console.error(error);
+          setIsLoggedIn(false);
+        });
     }
   }, [isLoggedIn]);
 
@@ -336,6 +344,7 @@ const App = () => {
                 currentUser={currentUser}
                 weatherData={temp}
                 clothingItems={clothingItems}
+                allClothes={allClothes}
                 handleCardClick={handleCardClick}
                 handleLikeClick={handleLikeClick}
                 openAddModal={() => {

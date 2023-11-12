@@ -40,9 +40,9 @@ const LoginModal = ({
       onCloseModal={handleCloseModal}
       onSubmit={handleSubmit}
     >
-      <h4 className={showFormError ? "modal__labelError" : "modal__label"}>
+      <label className={showFormError ? "modal__labelError" : "modal__label"}>
         {showFormError ? "Incorrect email or password" : "Email"}
-      </h4>
+      </label>
       <input
         className={showFormError ? "modal__inputError" : "modal__input"}
         type="email"
@@ -52,10 +52,11 @@ const LoginModal = ({
         name="email"
         required
       />
-      <h4 className={showFormError ? "modal__labelError" : "modal__label"}>
+      <label className={showFormError ? "modal__labelError" : "modal__label"}>
         {showFormError ? "Incorrect email or password" : "Password"}
-      </h4>
+      </label>
       <input
+        id="password"
         className={showFormError ? "modal__inputError" : "modal__input"}
         type="password"
         placeholder="Password"
@@ -64,9 +65,13 @@ const LoginModal = ({
         name="password"
         required
       />
-      <p className="modal__register" onClick={handleToggleModal}>
+      <label
+        input="Register"
+        className="modal__register"
+        onClick={handleToggleModal}
+      >
         or Register
-      </p>
+      </label>
     </ModalWithForm>
   );
 };

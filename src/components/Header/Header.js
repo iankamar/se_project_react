@@ -60,7 +60,7 @@ const Header = ({
               <img
                 className="header__avatarIcon"
                 src={currentUser?.avatar}
-                alt="header__avatar"
+                alt={currentUser?.name}
               />
             )}
             <h2 className="header__username">{currentUser?.name}</h2>

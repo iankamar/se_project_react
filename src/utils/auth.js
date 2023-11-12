@@ -1,12 +1,8 @@
+import { request } from "../utils/api";
 export const baseUrl = "http://localhost:3001";
 
 export const handleServerResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-};
-
-export const request = async (url, options) => {
-  const res = await fetch(url, options);
-  return handleServerResponse(res);
 };
 
 export const register = ({ name, avatar, email, password }) => {

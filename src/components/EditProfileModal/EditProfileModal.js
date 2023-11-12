@@ -15,19 +15,13 @@ const EditProfileModal = ({
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      await handleProfileUpdate({
-        name: name ?? undefined,
-        avatar: avatar ?? undefined,
-        token: localStorage.getItem("token"),
-      });
-
-      onCloseModal();
-    } catch (err) {
-      console.log(err);
-    }
+    handleProfileUpdate({
+      name: name ?? undefined,
+      avatar: avatar ?? undefined,
+      token: localStorage.getItem("token"),
+    });
   };
 
   const handleNameInput = (e) => {
@@ -47,8 +41,11 @@ const EditProfileModal = ({
       onCloseModal={onCloseModal}
       onSubmit={handleSubmit}
     >
-      <h4>Name*</h4>
+      <label htmlFor="name" className="modal__label">
+        Name*
+      </label>
       <input
+        id="name"
         className="modal__input"
         name="name"
         type="name"
@@ -56,8 +53,11 @@ const EditProfileModal = ({
         onChange={handleNameInput}
         placeholder="Name"
       ></input>
-      <h4>Avatar*</h4>
+      <label htmlFor="avatar" className="modal__label">
+        Avatar*
+      </label>
       <input
+        id="avatar"
         className="modal__input"
         name="avatar"
         type="url"

@@ -4,6 +4,7 @@ import SideBar from "./SideBar/SideBar";
 import ClothesSection from "./ClothesSection/ClothesSection";
 
 const Profile = ({
+  allClothes,
   onSelectCard,
   handleCreateModal,
   clothingItems,
@@ -17,9 +18,9 @@ const Profile = ({
         <div className="profile__wrapper">
           <SideBar updateProfile={updateProfile} handleLogout={handleLogout} />
           <div className="profile__items">
-            <h4>Your items</h4>
+            <label>Your items</label>
             <button
-              type="submit"
+              type="button"
               onClick={() => handleCreateModal("create")}
               className="profile__item"
             >
@@ -34,6 +35,7 @@ const Profile = ({
             {/* Sidebar content goes here */}
           </div>
           <ClothesSection
+            allClothes={allClothes}
             clothingItems={clothingItems}
             onSelectCard={onSelectCard}
             handleLikeClick={handleLikeClick}

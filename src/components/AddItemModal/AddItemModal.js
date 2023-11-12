@@ -34,9 +34,10 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
       onSubmit={handleSubmit}
     >
       <div className="modal__fieldset">
-        <label className="modal__label">
+        <label input="name" className="modal__label">
           Name
           <input
+            id="name"
             type="text"
             name="name"
             minLength="1"
@@ -50,11 +51,12 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
         </label>
       </div>
       <div className="modal__fieldset">
-        <label className="modal__label">
+        <label input="image" className="modal__label">
           Image
           <input
+            id="image"
             type="url"
-            name="link"
+            name="image"
             minLength="1"
             maxLength="2048"
             value={link}

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const RegisterModal = ({
@@ -15,7 +14,6 @@ const RegisterModal = ({
     name: "",
     avatar: "",
   });
-  const history = useHistory();
 
   useEffect(() => {
     setCredentials({
@@ -48,8 +46,11 @@ const RegisterModal = ({
       onCloseModal={handleCloseModal}
       onSubmit={handleSubmit}
     >
-      <h3 className="modal__label">Email*</h3>
+      <label input="email" className="modal__label">
+        Email*
+      </label>
       <input
+        id="email"
         className="modal__input"
         name="email"
         type="email"
@@ -58,8 +59,11 @@ const RegisterModal = ({
         placeholder="Email"
         required
       />
-      <h3 className="modal__label">Password*</h3>
+      <label input="password" className="modal__label">
+        Password*
+      </label>
       <input
+        id="password"
         className="modal__input"
         name="password"
         type="password"
@@ -68,8 +72,11 @@ const RegisterModal = ({
         placeholder="Password"
         required
       />
-      <h3 className="modal__label">Name</h3>
+      <label input="name" className="modal__label">
+        Name
+      </label>
       <input
+        id="name"
         className="modal__input"
         name="name"
         type="text"
@@ -77,8 +84,11 @@ const RegisterModal = ({
         onChange={handleChange}
         placeholder="Name"
       />
-      <h3 className="modal__label">Avatar URL</h3>
+      <label input="avatar" className="modal__label">
+        Avatar URL
+      </label>
       <input
+        id="avatar"
         className="modal__input"
         name="avatar"
         type="url"
