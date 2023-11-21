@@ -1,5 +1,8 @@
 import { request } from "../utils/api";
-export const baseUrl = "http://localhost:3001";
+export const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.iankamar-wtwr.cbu.net"
+    : "http://localhost:3001";
 
 export const register = ({ name, avatar, email, password }) => {
   return request(`${baseUrl}/signup`, {
