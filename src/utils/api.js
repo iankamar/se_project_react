@@ -1,7 +1,4 @@
-const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? "https://api.iankamar-wtwr.cbu.net"
-    : "https://api.iankamar-wtwr.cbu.net";
+const baseUrl = "https://api.iankamar-wtwr.cbu.net";
 
 export const handleServerResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
