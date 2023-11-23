@@ -1,10 +1,10 @@
-// const baseUrl = "https://api.iankamar-wtwr.cbu.net";
-
+const baseUrl = "https://api.iankamar-wtwr.cbu.net";
+/*
 const baseUrl =
   process.env.NODE_ENV === "production"
     ? "https://api.iankamar-wtwr.cbu.net"
     : "http://localhost:3001";
-
+*/
 /*
 c=
 let baseUrl;
