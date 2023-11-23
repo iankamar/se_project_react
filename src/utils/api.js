@@ -6,6 +6,7 @@ const baseUrl =
     : "http://localhost:3001";
 
 /*
+c=
 let baseUrl;
 
 switch (process.env.NODE_ENV) {
@@ -20,6 +21,7 @@ switch (process.env.NODE_ENV) {
 }
 */
 export const handleServerResponse = (res) => {
+  console.log(process.env.NODE_ENV, baseUrl);
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
 

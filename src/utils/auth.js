@@ -21,6 +21,7 @@ switch (process.env.NODE_ENV) {
 }
 */
 export const register = ({ name, avatar, email, password }) => {
+  console.log(process.env.NODE_ENV, baseUrl);
   return request(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
