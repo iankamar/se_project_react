@@ -1,12 +1,24 @@
 import { request } from "../utils/api";
 // export const baseUrl = "https://api.iankamar-wtwr.cbu.net";
-
+/*
 const baseUrl =
   process.env.NODE_ENV === "production"
     ? "https://api.iankamar-wtwr.cbu.net"
     : "http://localhost:3001";
+*/
 
-// deployed-backend-url is the URL that points to your deployed back end
+let baseUrl;
+
+switch (process.env.NODE_ENV) {
+  case "production":
+    baseUrl = "https://api.iankamar-wtwr.cbu.net";
+    break;
+  case "testing":
+    baseUrl = "https://api.iankamar-wtwr.cbu.net";
+    break;
+  default:
+    baseUrl = "http://localhost:3001";
+}
 
 export const register = ({ name, avatar, email, password }) => {
   return request(`${baseUrl}/signup`, {

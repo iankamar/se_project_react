@@ -31,7 +31,7 @@ export const weatherOptions = [
     url: storm,
     day: true,
     type: "storm",
-    tempRange: "cold",
+    tempRange: "storm",
   },
   {
     url: snow,

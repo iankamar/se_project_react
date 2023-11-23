@@ -33,17 +33,17 @@ function Main({
     if (currentTemperatureUnit === "F") {
       if (temp >= 86) {
         return "hot";
-      } else if (temp >= 60 && temp <= 85) {
+      } else if (temp >= 50 && temp <= 85) {
         return "warm";
-      } else if (temp <= 60) {
+      } else if (temp <= 50) {
         return "cold";
       }
     } else if (currentTemperatureUnit === "C") {
       if (temp >= 30) {
         return "hot";
-      } else if (temp >= 15 && temp <= 29) {
+      } else if (temp >= 10 && temp <= 29) {
         return "warm";
-      } else if (temp <= 15) {
+      } else if (temp <= 10) {
         return "cold";
       }
     }
