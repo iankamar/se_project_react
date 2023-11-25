@@ -94,7 +94,7 @@ const App = () => {
 
         imageUrl: itemCard.imageUrl,
 
-        weather: itemCard.weatherType,
+        weather: itemCard.weather,
       };
 
       return addItem(item).then((item) => {

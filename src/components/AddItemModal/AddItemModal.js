@@ -12,19 +12,18 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
     setImageUrl(e.target.value);
   };
 
-  const [weatherType, setWeatherType] = useState("");
-  const handleWeatherTypeChange = (e) => {
-    if (weatherType === e.target.value) {
-      setWeatherType("");
+  const [weather, setWeather] = useState("");
+  const handleWeatherChange = (e) => {
+    if (weather === e.target.value) {
+      setWeather("");
     } else {
-      setWeatherType(e.target.value);
+      setWeather(e.target.value);
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data:", { name, imageUrl, weatherType });
-    onAddItem({ name, imageUrl, weatherType });
+    onAddItem({ name, imageUrl, weather });
   };
 
   return (
@@ -81,7 +80,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
               type="radio"
               value="hot"
               name="weatherType"
-              onChange={handleWeatherTypeChange}
+              onChange={handleWeatherChange}
             />
             Hot
           </label>
@@ -92,7 +91,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
               type="radio"
               value="warm"
               name="weatherType"
-              onChange={handleWeatherTypeChange}
+              onChange={handleWeatherChange}
             />
             Warm
           </label>
@@ -103,7 +102,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
               type="radio"
               value="cold"
               name="weatherType"
-              onChange={handleWeatherTypeChange}
+              onChange={handleWeatherChange}
             />
             Cold
           </label>
