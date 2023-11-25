@@ -30,7 +30,7 @@ export const addItem = async (item) => {
     },
     body: JSON.stringify({
       name: item.name,
-      imageUrl: item.link,
+      imageUrl: item.imageUrl,
       weather: item.weather,
     }),
   });
