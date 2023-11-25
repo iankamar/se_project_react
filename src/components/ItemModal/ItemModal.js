@@ -27,7 +27,10 @@ const ItemModal = ({
         <button type="button" onClick={onClose} className="modal__close">
           &#x2715;
         </button>
-        <img src={selectedCard.imageUrl} alt={selectedCard.name} />
+        <img
+          src={selectedCard.imageUrl || selectedCard.link}
+          alt={selectedCard.name}
+        />
         {isLoggedIn ? (
           <div className="modal__align">
             <h3> {selectedCard.name}</h3>

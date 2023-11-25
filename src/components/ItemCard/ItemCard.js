@@ -16,7 +16,7 @@ const ItemCard = ({ item, onSelectCard, handleLikeClick }) => {
     <div>
       <div className="card">
         <img
-          src={item?.imageUrl}
+          src={item?.link || item?.imageUrl}
           alt={item.name}
           className="card__image"
           onClick={() => onSelectCard(item)}
