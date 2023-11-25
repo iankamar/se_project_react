@@ -23,6 +23,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Form Data:", { name, imageUrl, weatherType });
     onAddItem({ name, imageUrl, weatherType });
   };
 
@@ -54,7 +55,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
           Image
           <input
             type="url"
-            name="image"
+            name="imageUrl"
             minLength="1"
             maxLength="2048"
             value={imageUrl}
