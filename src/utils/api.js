@@ -1,23 +1,8 @@
-//const baseUrl = "https://api.iankamar-wtwr.cbu.net";
-
 const baseUrl =
   process.env.NODE_ENV === "production"
     ? "https://api.iankamar-wtwr.cbu.net"
     : "http://localhost:3001";
-/*
-let baseUrl;
 
-switch (process.env.NODE_ENV) {
-  case "production":
-    baseUrl = "https://api.iankamar-wtwr.cbu.net";
-    break;
-  case "testing":
-    baseUrl = "https://api.iankamar-wtwr.cbu.net";
-    break;
-  default:
-    baseUrl = "http://localhost:3001";
-}
-*/
 export const handleServerResponse = (res) => {
   console.log(process.env.NODE_ENV, baseUrl);
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
@@ -45,7 +30,7 @@ export const addItem = async (item) => {
     },
     body: JSON.stringify({
       name: item.name,
-      link: item.link,
+      imageUrl: item.imageUrl,
       weather: item.weather,
     }),
   });
