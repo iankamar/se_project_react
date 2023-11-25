@@ -92,7 +92,7 @@ const App = () => {
       const item = {
         name: itemCard.name,
 
-        imageUrl: itemCard.link,
+        link: itemCard.link,
 
         weather: itemCard.weatherType,
       };
