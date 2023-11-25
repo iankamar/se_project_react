@@ -45,7 +45,7 @@ export const addItem = async (item) => {
     },
     body: JSON.stringify({
       name: item.name,
-      link: item.link,
+      imageUrl: item.link,
       weather: item.weather,
     }),
   });
