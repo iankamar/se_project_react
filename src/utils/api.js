@@ -1,7 +1,14 @@
-const baseUrl =
+const baseUrl = 
   process.env.NODE_ENV === "production"
-    ? "https://api.iankamar-wtwr.cbu.net"
+    ? "https://api-iankamar-wtwrr.azurewebsites.net"
     : "http://localhost:3001";
+
+  /*
+  const baseUrl = 
+  process.env.NODE_ENV === "production"
+    ? "https://api-iankamar-wtwrr.azurewebsites.net"
+    : "http://localhost:3001";
+  */
 
 export const handleServerResponse = (res) => {
   console.log(process.env.NODE_ENV, baseUrl);
