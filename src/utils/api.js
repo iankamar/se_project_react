@@ -1,6 +1,6 @@
 const baseUrl = 
   process.env.NODE_ENV === "production"
-    ? "https://api-iankamar-wtwrr.azurewebsites.net"
+    ? "https://api-iankamar-wtwr.azurewebsites.net"
     : "http://localhost:3001";
 
   /*
