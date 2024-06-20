@@ -39,12 +39,12 @@ The project utilizes the following technologies:
 
 ## [Link](https://github.com/iankamar/se_project_express)
 
+The application is optimized for desktop, mobile version coming soon.
 
+<!--
 ## Accessing the Application
 
 To access the application, use the following domain:
 
 - Domain: [Ian Kamar WTWR](https://iankamar-wtwr.azurewebsites.net)
-
-
-## The application is optimized for desktop, mobile version coming soon.
+--!>
