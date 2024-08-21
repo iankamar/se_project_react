@@ -44,7 +44,7 @@ The project utilizes the following technologies:
 
 To access the application, use the following domain:
 
-- Domain: [Ian Kamar WTWR](https://iankamar-wtwr.azurewebsites.net)
+- Domain: [Ian Kamar WTWR](https://seprojectreact-f2zwr8vuu-iankamars-projects.vercel.app/)
 
 
 ## The application is optimized for desktop, mobile version coming soon.
