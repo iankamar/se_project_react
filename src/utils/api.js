@@ -1,14 +1,7 @@
 const baseUrl = 
   process.env.NODE_ENV === "production"
-    ? "https://api-iankamar-wtwr.azurewebsites.net"
+    ? "se-project-express.vercel.app"
     : "http://localhost:3001";
-
-  /*
-  const baseUrl = 
-  process.env.NODE_ENV === "production"
-    ? "https://api-iankamar-wtwrr.azurewebsites.net"
-    : "http://localhost:3001";
-  */
 
 export const handleServerResponse = (res) => {
   console.log(process.env.NODE_ENV, baseUrl);
