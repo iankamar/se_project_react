@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && scp -r -i ~/.ssh/id_ed25519 ./build/* ian_kamar@iankamar-wtwr.cbu.net:/home/ian_kamar/frontend",
+    "deploy": "npm run build",
     "start:dev": "NODE_ENV=development react-scripts start",
     "start:test": "NODE_ENV=testing react-scripts start",
     "start:prod": "NODE_ENV=production react-scripts start"
@@ -45,5 +45,5 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   },
-  "homepage": "https://www.iankamar-wtwr.cbu.net"
+  "homepage": "https://se-project-react.vercel.app/"
 }

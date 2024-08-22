@@ -1,5 +1,0 @@
-{
-    "appService.showBuildDuringDeployPrompt": false,
-    "appService.defaultWebAppToDeploy": "/subscriptions/9282b8b8-bc13-4a57-a1c0-6104ea3a2332/resourceGroups/iankamar-wtwr_group/providers/Microsoft.Web/sites/iankamar-wtwr",
-    "appService.deploySubpath": "build"
-}
