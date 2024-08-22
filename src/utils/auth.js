@@ -1,10 +1,12 @@
 import { request } from "../utils/api";
 
+const baseUrl = "https://se-project-express.vercel.app";
+/*
 const baseUrl =
   process.env.NODE_ENV === "production"
     ? "https://se-project-express.vercel.app"
     : "http://localhost:3001";
-
+*/
 
 export const register = ({ name, avatar, email, password }) => {
   console.log(process.env.NODE_ENV, baseUrl);
