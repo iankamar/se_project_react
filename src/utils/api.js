@@ -1,7 +1,8 @@
-const baseUrl = 
+const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "se-project-express.vercel.app"
+    ? "https://se-project-express.vercel.app"
     : "http://localhost:3001";
+    
 
 export const handleServerResponse = (res) => {
   console.log(process.env.NODE_ENV, baseUrl);
