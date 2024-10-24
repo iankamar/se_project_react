@@ -148,7 +148,7 @@ const App = () => {
           history.push("/");
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error("Registration error:", err));
   };
 
   const handleLogin = ({ email, password }) => {
