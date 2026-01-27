@@ -6,7 +6,7 @@ The project is focusex on fetching daily weather forecasts from an API, process 
 <img width="897" alt="WTWR B" src="https://github.com/iankamar/se_project_react/assets/95672055/8b138258-6f3c-4cdc-9f7b-d53e635b09c5">
 <img width="864" alt="WTWR C" src="https://github.com/iankamar/se_project_react/assets/95672055/0f3ecd1b-587d-4931-b343-227a44c7b34e">
 
-## Project Functionality
+## Project Functionality.
 
 The front-end server of the WTWR application is responsible for:
 
